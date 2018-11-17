@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicLayer.Entities.Entities
 {
+    [Serializable]
     public class Patient : Person
     {
         #region Fields

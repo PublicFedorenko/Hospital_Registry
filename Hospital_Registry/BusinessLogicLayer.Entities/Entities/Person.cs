@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 namespace BusinessLogicLayer.Entities.Entities
 {
     public enum Gender { Male, Female }
+
+    [Serializable]
     public class Person
     {
         public string FirstName { get; protected set; }
