@@ -5,46 +5,43 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:PresentationLayer.GUI"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    x:Name="MainWindow"
     Title="MainWindow"
-    Width="918.4"
-    Height="578.4"
+    Width="1374.4"
+    Height="640.622"
     SizeToContent="WidthAndHeight"
-    mc:Ignorable="d">
+    mc:Ignorable="d" ResizeMode="NoResize">
 
     <Grid>
         <TabControl
-            Width="912"
-            Height="549"
-            Margin="0,0,0,-0.2"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
             HorizontalContentAlignment="Center"
             VerticalContentAlignment="Bottom"
             TabStripPlacement="Left">
             <TabItem Header="TabItem" Style="{StaticResource TabItemStyle}">
                 <Grid Background="#FFE5E5E5" />
             </TabItem>
-            <TabItem Header="TabItem" Style="{StaticResource TabItemStyle}">
-                <Grid Background="#FFE5E5E5">
-                    <ComboBox
-                        Width="439"
-                        Height="26"
-                        Margin="36,31,0,0"
-                        HorizontalAlignment="Left"
-                        VerticalAlignment="Top"
-                        IsEditable="True" />
+            <TabItem Header="Пацієнти" Style="{StaticResource TabItemStyle}">
+                <Grid Height="606" Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="535*" />
+                        <ColumnDefinition Width="23*" />
+                        <ColumnDefinition Width="685*" />
+                    </Grid.ColumnDefinitions>
+
                     <TextBlock
-                        Margin="36,87,0,0"
-                        HorizontalAlignment="Left"
+                        Grid.Column="2"
+                        Margin="0,88,20.2,0"
+                        HorizontalAlignment="Right"
                         VerticalAlignment="Top"
-                        FontSize="20"
+                        FontSize="24"
                         Text="Bogdan Fedorenko"
                         TextWrapping="Wrap" />
                     <GroupBox
-                        Width="210"
-                        Height="185"
-                        Margin="265,119,0,0"
+                        Grid.Column="2"
+                        Width="285"
+                        Height="155"
+                        Margin="109.6,192,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         FontSize="16"
@@ -60,8 +57,8 @@
                                 Content="City:"
                                 FontSize="14" />
                             <Label
-                                Margin="146,9,0,0"
-                                HorizontalAlignment="Left"
+                                Margin="0,10,5,0"
+                                HorizontalAlignment="Right"
                                 VerticalAlignment="Top"
                                 Content="Label"
                                 FontSize="14" />
@@ -84,29 +81,30 @@
                                 Content="Apartment:"
                                 FontSize="14" />
                             <Label
-                                Margin="146,38,0,0"
-                                HorizontalAlignment="Left"
+                                Margin="0,38,5.8,0"
+                                HorizontalAlignment="Right"
                                 VerticalAlignment="Top"
                                 Content="Label"
                                 FontSize="14" />
                             <Label
-                                Margin="146,67,0,0"
-                                HorizontalAlignment="Left"
+                                Margin="0,67,5,0"
+                                HorizontalAlignment="Right"
                                 VerticalAlignment="Top"
                                 Content="Label"
                                 FontSize="14" />
                             <Label
-                                Margin="146,96,0,0"
-                                HorizontalAlignment="Left"
+                                Margin="0,96,5,0"
+                                HorizontalAlignment="Right"
                                 VerticalAlignment="Top"
                                 Content="Label"
                                 FontSize="14" />
                         </Grid>
                     </GroupBox>
                     <GroupBox
-                        Width="210"
-                        Height="185"
-                        Margin="36,119,0,0"
+                        Grid.Column="2"
+                        Width="256"
+                        Height="118"
+                        Margin="410.911,352,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         FontSize="16"
@@ -116,72 +114,54 @@
                             HorizontalAlignment="Stretch"
                             VerticalAlignment="Stretch">
                             <Label
-                                Margin="0,9,0,0"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Top"
-                                Content="First Name"
-                                FontSize="14" />
-                            <Label
-                                Margin="146,10,0,0"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Top"
-                                Content="Label"
-                                FontSize="14"
-                                RenderTransformOrigin="0.347,0.458" />
-                            <Label
-                                Margin="0,38,0,0"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Top"
-                                Content="Second Name:"
-                                FontSize="14" />
-                            <Label
-                                Margin="0,67,0,0"
+                                Height="28"
+                                Margin="5,5,0,0"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Top"
                                 Content="Age:"
                                 FontSize="14" />
                             <Label
-                                Margin="0,96,0,0"
+                                Height="28"
+                                Margin="5,33,0,0"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Top"
-                                Content="Day of birth:"
+                                Content="Date of birth:"
                                 FontSize="14" />
                             <Label
-                                Margin="146,38,0,0"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Top"
-                                Content="Label"
-                                FontSize="14" />
-                            <Label
-                                Margin="146,67,0,0"
-                                HorizontalAlignment="Left"
+                                Height="28"
+                                Margin="0,5,5,0"
+                                HorizontalAlignment="Right"
                                 VerticalAlignment="Top"
                                 Content="Label"
                                 FontSize="14" />
                             <Label
-                                Margin="146,96,0,0"
-                                HorizontalAlignment="Left"
+                                Height="28"
+                                Margin="0,33,5.4,0"
+                                HorizontalAlignment="Right"
                                 VerticalAlignment="Top"
                                 Content="Label"
                                 FontSize="14" />
                             <Label
-                                Margin="0,125,0,0"
+                                Height="28"
+                                Margin="5,61,0,0"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Top"
                                 Content="Gender:"
                                 FontSize="14" />
                             <Label
-                                Margin="146,125,0,0"
-                                HorizontalAlignment="Left"
+                                Height="28"
+                                Margin="0,61,5.4,0"
+                                HorizontalAlignment="Right"
                                 VerticalAlignment="Top"
                                 Content="Label"
                                 FontSize="14" />
                         </Grid>
                     </GroupBox>
                     <GroupBox
-                        Width="439"
-                        Height="157"
-                        Margin="36,321,0,0"
+                        Grid.Column="2"
+                        Width="285"
+                        Height="153"
+                        Margin="109.911,352,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         FontSize="16"
@@ -197,7 +177,7 @@
                                 Content="Mobile Number 1:"
                                 FontSize="14" />
                             <Label
-                                Margin="0,9,11.6,0"
+                                Margin="0,9,5,0"
                                 HorizontalAlignment="Right"
                                 VerticalAlignment="Top"
                                 Content="+380636429376"
@@ -221,28 +201,98 @@
                                 Content="E-mail:"
                                 FontSize="14" />
                             <Label
-                                Margin="0,38,11.6,64.8"
+                                Margin="0,38,5,0"
                                 HorizontalAlignment="Right"
+                                VerticalAlignment="Top"
                                 Content="+380935727941"
                                 FontSize="14" />
                             <Label
-                                Margin="356,67,0,35.8"
-                                HorizontalAlignment="Left"
+                                Margin="0,67,5,0"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Top"
                                 Content="2700456"
                                 FontSize="14" />
                             <Label
-                                Margin="356,96,0,6.8"
-                                HorizontalAlignment="Left"
+                                Margin="0,96,5,0"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Top"
                                 Content="1231233"
                                 FontSize="14" />
                         </Grid>
                     </GroupBox>
+                    <Border
+                        Grid.Column="2"
+                        Width="172"
+                        Height="204"
+                        Margin="0,135,20.2,0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        BorderBrush="Black"
+                        BorderThickness="1" />
+                    <Grid Grid.Row="0" Grid.Column="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10*" />
+                            <ColumnDefinition Width="112*" />
+                            <ColumnDefinition Width="346*" />
+                            <ColumnDefinition Width="35*" />
+                            <ColumnDefinition Width="35*" />
+                            <ColumnDefinition Width="10*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="10" />
+                            <RowDefinition Height="36*" />
+                            <RowDefinition Height="20*" />
+                            <RowDefinition Height="36*"/>
+                            <RowDefinition Height="45*"/>
+                            <RowDefinition Height="441*"/>
+                            <RowDefinition Height="10*"/>
+                        </Grid.RowDefinitions>
+
+
+                        <TextBox
+                            Grid.Row="3"
+                            Grid.Column="1"
+                            Grid.ColumnSpan="4"
+                            FontSize="14"
+                            Text="TextBox"
+                            TextWrapping="Wrap" />
+                        <ScrollViewer
+                            Grid.Row="5"
+                            Grid.Column="1"
+                            Grid.ColumnSpan="4"
+                            Width="495"
+                            Height="430"
+                            Margin="1.4,1,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top">
+                            <ListBox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                        </ScrollViewer>
+                        <Label
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Content="All patients"
+                            FontSize="20" Grid.ColumnSpan="2" Margin="0.4,0.4,342.2,0.6" />
+                        <Button
+                            Grid.Row="1"
+                            Grid.Column="3"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Content="Add"
+                            FontSize="14" Margin="2.8,6.4,2.6,6.6" Height="23" Width="29" />
+                        <Button
+                            Grid.Row="1"
+                            Grid.Column="4"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Content="Rem"
+                            FontSize="14" Margin="2.4,6.4,3,6.6" Height="23" Width="29" />
+                    </Grid>
                 </Grid>
             </TabItem>
-            <TabItem Header="TabItem" Style="{StaticResource TabItemStyle}">
+            <TabItem Header="Лікарі" Style="{StaticResource TabItemStyle}">
                 <Grid Background="#FFE5E5E5" />
             </TabItem>
-            <TabItem Header="TabItem" Style="{StaticResource TabItemStyle}">
+            <TabItem Header="Розклад" Style="{StaticResource TabItemStyle}">
                 <Grid Background="#FFE5E5E5" />
             </TabItem>
             <ListBox Width="100" Height="100" />
