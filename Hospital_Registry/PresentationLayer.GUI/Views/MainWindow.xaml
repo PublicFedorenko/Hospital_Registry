@@ -254,15 +254,12 @@
                         <TextBox
                             Grid.Row="3"
                             Grid.Column="1"
-                            MinWidth="300"
                             FontSize="14"
                             TextWrapping="Wrap" />
                         <ScrollViewer
-                            Grid.Row="6"
-                            Grid.RowSpan="3"
+                            Grid.Row="7"
                             Grid.Column="1"
-                            Grid.ColumnSpan="3"
-                            Margin="0,9.4,0.4,8.4">
+                            Grid.ColumnSpan="3">
                             <ListBox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                         </ScrollViewer>
                         <Label
@@ -275,7 +272,6 @@
                         <Button
                             Grid.Row="1"
                             Grid.Column="2"
-                            Margin="4.2,10.8,3.6,10.8"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
                             Content="Add"
@@ -283,24 +279,19 @@
                         <Button
                             Grid.Row="1"
                             Grid.Column="3"
-                            Margin="3.4,10.8"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
                             Content="Rem"
                             FontSize="14" />
                         <Button
-                            Grid.Row="2"
-                            Grid.RowSpan="3"
+                            Grid.Row="3"
                             Grid.Column="2"
                             Grid.ColumnSpan="2"
-                            Margin="0.2,10.2,0.4,9"
                             Content="Search" />
                         <Label
-                            Grid.Row="4"
-                            Grid.RowSpan="3"
+                            Grid.Row="5"
                             Grid.Column="1"
                             Grid.ColumnSpan="3"
-                            Margin="0,9.4,0.4,9"
                             VerticalContentAlignment="Center"
                             Content="Enter request and press Search or Enter key." />
                         <Separator
@@ -311,20 +302,10 @@
                             Grid.Row="6"
                             Grid.Column="1"
                             Grid.ColumnSpan="3" />
-                        <!--<Separator
-                            Grid.Row="2"
-                            Grid.Column="1"
-                            Grid.ColumnSpan="4"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center" />-->
                     </Grid>
 
 
-                    <Grid
-                        Grid.Column="2">
-
-
-                    </Grid>
+                    <Grid Grid.Column="2" />
                 </Grid>
             </TabItem>
             <TabItem Header="Лікарі" Style="{StaticResource TabItemStyle}">
