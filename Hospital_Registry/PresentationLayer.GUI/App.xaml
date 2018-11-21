@@ -8,7 +8,8 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="ResourceDictionaries\NamedStyles\TabItemStyle.xaml" />
+                <ResourceDictionary Source="Resources\NamedStyles\TabItemStyle.xaml" />
+                <ResourceDictionary Source="Resources\NamedStyles\CopybleReadOnlyTextBox.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

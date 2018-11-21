@@ -222,93 +222,234 @@
             </TabItem>
             <TabItem Header="Пацієнти" Style="{StaticResource TabItemStyle}">
                 <Grid Background="#FFE5E5E5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="452*" />
-                        <ColumnDefinition Width="9*" />
-                        <ColumnDefinition Width="566*" />
+                        <ColumnDefinition Width="197*" />
+                        <ColumnDefinition Width="5*" />
+                        <ColumnDefinition Width="311*" />
                     </Grid.ColumnDefinitions>
-                    <Grid
-                        Grid.Row="0"
+                    <Separator
+                        Grid.Row="1"
                         Grid.Column="0"
-                        Margin="0,0,10,-0.4">
+                        Grid.ColumnSpan="3"
+                        Margin="0,2.4,0.4,2.2" />
+
+
+                    <Grid
+                        Grid.Row="1"
+                        Grid.RowSpan="2"
+                        Grid.Column="0"
+                        Margin="0,9.4,4.4,-0.4">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="10" />
                             <ColumnDefinition Width="69*" />
                             <ColumnDefinition Width="38.4" />
                             <ColumnDefinition Width="38.4" />
                             <ColumnDefinition Width="2*" />
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="11*" />
-                            <RowDefinition Height="42.4" />
-                            <RowDefinition Height="10*" />
-                            <RowDefinition Height="34*" />
+                            <RowDefinition Height="34" />
+                            <RowDefinition Height="10" />
+                            <RowDefinition Height="34" />
                             <RowDefinition Height="10*" />
                             <RowDefinition Height="25.6" />
-                            <RowDefinition Height="10*" />
-                            <RowDefinition Height="454*" />
-                            <RowDefinition Height="10*" />
+                            <RowDefinition Height="10" />
+                            <RowDefinition Height="453*" />
+                            <RowDefinition Height="10" />
                         </Grid.RowDefinitions>
 
 
                         <TextBox
-                            Grid.Row="3"
+                            Grid.Row="2"
                             Grid.Column="1"
                             FontSize="14"
                             TextWrapping="Wrap" />
                         <ScrollViewer
-                            Grid.Row="7"
+                            Grid.Row="6"
                             Grid.Column="1"
                             Grid.ColumnSpan="3">
                             <ListBox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                         </ScrollViewer>
                         <Label
-                            Grid.Row="1"
+                            Grid.Row="0"
                             Grid.Column="1"
-                            HorizontalContentAlignment="Left"
-                            VerticalContentAlignment="Center"
                             Content="All patients"
                             FontSize="20" />
                         <Button
-                            Grid.Row="1"
                             Grid.Column="2"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
                             Content="Add"
                             FontSize="14" />
                         <Button
-                            Grid.Row="1"
                             Grid.Column="3"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
                             Content="Rem"
                             FontSize="14" />
                         <Button
-                            Grid.Row="3"
+                            Grid.Row="2"
                             Grid.Column="2"
                             Grid.ColumnSpan="2"
                             Content="Search" />
                         <Label
-                            Grid.Row="5"
+                            Grid.Row="4"
                             Grid.Column="1"
                             Grid.ColumnSpan="3"
                             VerticalContentAlignment="Center"
                             Content="Enter request and press Search or Enter key." />
                         <Separator
-                            Grid.Row="2"
+                            Grid.Row="1"
                             Grid.Column="1"
                             Grid.ColumnSpan="3" />
                         <Separator
-                            Grid.Row="6"
+                            Grid.Row="5"
                             Grid.Column="1"
                             Grid.ColumnSpan="3" />
                     </Grid>
 
 
-                    <Grid Grid.Column="2" Margin="0.2,0,0.4,-0.4">
-                        <ScrollViewer
-                            />
-                    </Grid>
+                    <ScrollViewer
+                        Grid.Row="1"
+                        Grid.RowSpan="2"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                        Margin="3.6,9.4,0.4,-0.4"
+                        VerticalScrollBarVisibility="Auto">
+                        <Grid
+                            Grid.Row="3"
+                            Grid.Column="2"
+                            Margin="0,0,0,0">
+                            <!--  REMOVE MARGIN  -->
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="34" />
+                                <RowDefinition Height="10" />
+                                <RowDefinition Height="34" />
+                                <RowDefinition Height="10" />
+                                <RowDefinition Height="500.8" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="10" />
+                                <ColumnDefinition Width="425*" />
+                                <ColumnDefinition Width="157*" />
+                                <ColumnDefinition Width="20" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                VerticalContentAlignment="Center"
+                                Content="Patients card"
+                                FontSize="20" />
+                            <StackPanel
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                Orientation="Horizontal">
+                                <TextBox
+                                    VerticalContentAlignment="Center"
+                                    Background="#FFE5E5E5"
+                                    BorderBrush="{x:Null}"
+                                    BorderThickness="0"
+                                    FontSize="14"
+                                    IsReadOnly="True"
+                                    Text="Bogdan Fedorenko"
+                                    TextWrapping="Wrap" />
+                                <Image RenderTransformOrigin="0.5,0.5" Source="..\Resources\Images\Male.png">
+                                    <Image.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleX="0.5" ScaleY="0.5" />
+                                            <SkewTransform />
+                                            <RotateTransform />
+                                            <TranslateTransform />
+                                        </TransformGroup>
+                                    </Image.RenderTransform>
+                                </Image>
+                            </StackPanel>
+                            <Grid Grid.Row="2" Grid.Column="2">
+                                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                                    <Button
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Content="Edit" />
+                                </StackPanel>
+                            </Grid>
+                            <Separator
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Grid.ColumnSpan="3"
+                                Margin="0.4,1.6,3.2,2" />
+                            <Grid
+                                Grid.Row="4"
+                                Grid.Column="1"
+                                Grid.ColumnSpan="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="135.2" />
+                                    <RowDefinition Height="10" />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+
+                                <Grid Grid.Row="0" Grid.Column="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="130" />
+                                        <ColumnDefinition Width="10" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="10" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Border BorderBrush="Gray" BorderThickness="1">
+                                        <Image Source="..\Resources\Images\PatientPhoto.png" />
+                                    </Border>
+
+                                    <StackPanel Grid.Row="0" Grid.Column="2">
+                                        <TextBox
+                                            Height="20"
+                                            Style="{StaticResource CopybleReadOnlyTextBox}"
+                                            Text="27 years 17.01.1990" />
+                                        <TextBox
+                                            Height="20"
+                                            Style="{StaticResource CopybleReadOnlyTextBox}"
+                                            Text="+380636429376" />
+                                        <TextBox
+                                            Height="20"
+                                            Style="{StaticResource CopybleReadOnlyTextBox}"
+                                            Text="270-04-29" />
+                                        <TextBox
+                                            Height="20"
+                                            Style="{StaticResource CopybleReadOnlyTextBox}"
+                                            Text="bogdan.fedorenko.stydy@gmail.com" />
+                                        <!--<TextBox
+                                            Height="20"
+                                            Style="{StaticResource CopybleReadOnlyTextBox}"
+                                            Text="Kyiv 02200" />
+                                        <TextBox
+                                            Height="20"
+                                            Style="{StaticResource CopybleReadOnlyTextBox}"
+                                            Text="Volynska St, 16" />-->
+                                    </StackPanel>
+                                    <StackPanel Grid.Row="0" Grid.Column="4">
+                                        <TextBox
+                                            Height="20"
+                                            Style="{StaticResource CopybleReadOnlyTextBox}"
+                                            Text="Kyiv, 02200" />
+                                        <TextBox
+                                            Height="20"
+                                            Style="{StaticResource CopybleReadOnlyTextBox}"
+                                            Text="Volynska St, 16" />
+                                        <TextBox
+                                            Height="20"
+                                            Style="{StaticResource CopybleReadOnlyTextBox}"
+                                            Text="Apartment: 34" />
+                                    </StackPanel>
+                                </Grid>
+                                <Grid Grid.Row="2" />
+                            </Grid>
+                        </Grid>
+                    </ScrollViewer>
                 </Grid>
             </TabItem>
             <TabItem Header="Лікарі" Style="{StaticResource TabItemStyle}">
