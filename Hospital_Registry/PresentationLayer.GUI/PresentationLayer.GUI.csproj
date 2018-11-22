@@ -55,7 +55,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Resources\Images\Images.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\NamedStyles\CopybleReadOnlyTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\NamedStyles\LittleIconStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -110,6 +118,25 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\PatientPhoto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Arroba.png" />
+    <Resource Include="Resources\Images\Handset.png" />
+    <Resource Include="Resources\Images\Placeholder.png" />
+    <Resource Include="Resources\Images\Smartphone.png" />
+    <Resource Include="Resources\Images\Telephone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Female.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Confetti.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Birthday-cake.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Id-card.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

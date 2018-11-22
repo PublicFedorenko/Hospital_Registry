@@ -1,0 +1,16 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:PresentationLayer.GUI.Resources.Images">
+    <BitmapImage x:Key="MaleIcon" UriSource="Male.png" />
+    <BitmapImage x:Key="FemaleIcon" UriSource="Female.png" />
+    <BitmapImage x:Key="HandsetIcon" UriSource="Handset.png" />
+    <BitmapImage x:Key="ArrobaIcon" UriSource="Arroba.png" />
+    <BitmapImage x:Key="PatientPhotoIcon" UriSource="PatientPhoto.png" />
+    <BitmapImage x:Key="PlaceholderIcon" UriSource="Placeholder.png" />
+    <BitmapImage x:Key="SmartphoneIcon" UriSource="Smartphone.png" />
+    <BitmapImage x:Key="TelephoneIcon" UriSource="Telephone.png" />
+    <BitmapImage x:Key="ConfettiIcon" UriSource="Confetti.png" />
+    <BitmapImage x:Key="BirthdayCakeIcon" UriSource="Birthday-cake.png" />
+    <BitmapImage x:Key="IdCardIcon" UriSource="Id-card.png" />
+</ResourceDictionary>

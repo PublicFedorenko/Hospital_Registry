@@ -10,6 +10,8 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources\NamedStyles\TabItemStyle.xaml" />
                 <ResourceDictionary Source="Resources\NamedStyles\CopybleReadOnlyTextBox.xaml" />
+                <ResourceDictionary Source="Resources\NamedStyles\LittleIconStyle.xaml" />
+                <ResourceDictionary Source="Resources\Images\Images.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

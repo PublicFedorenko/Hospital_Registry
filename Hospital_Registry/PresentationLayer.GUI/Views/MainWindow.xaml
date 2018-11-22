@@ -19,209 +19,11 @@
             HorizontalContentAlignment="Center"
             VerticalContentAlignment="Bottom"
             TabStripPlacement="Left">
-            <TabItem Header="TabItem" Style="{StaticResource TabItemStyle}">
-                <Grid Background="#FFE5E5E5">
-                    <TextBlock
-                        Width="202"
-                        Height="32"
-                        Margin="0,88,20,0"
-                        HorizontalAlignment="Right"
-                        VerticalAlignment="Top"
-                        FontSize="24"
-                        Text="Bogdan Fedorenko"
-                        TextWrapping="Wrap" />
-                    <GroupBox
-                        Width="285"
-                        Height="155"
-                        Margin="675,192,0,0"
-                        HorizontalAlignment="Left"
-                        VerticalAlignment="Top"
-                        FontSize="16"
-                        Header="Adress">
-                        <Grid
-                            Margin="0,0,-3.2,-3"
-                            HorizontalAlignment="Stretch"
-                            VerticalAlignment="Stretch">
-                            <Label
-                                Margin="0,9,0,0"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Top"
-                                Content="City:"
-                                FontSize="14" />
-                            <Label
-                                Margin="0,10,5,0"
-                                HorizontalAlignment="Right"
-                                VerticalAlignment="Top"
-                                Content="Label"
-                                FontSize="14" />
-                            <Label
-                                Margin="0,38,0,0"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Top"
-                                Content="Street:"
-                                FontSize="14" />
-                            <Label
-                                Margin="0,67,0,0"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Top"
-                                Content="Building:"
-                                FontSize="14" />
-                            <Label
-                                Margin="0,96,0,0"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Top"
-                                Content="Apartment:"
-                                FontSize="14" />
-                            <Label
-                                Margin="0,38,5.8,0"
-                                HorizontalAlignment="Right"
-                                VerticalAlignment="Top"
-                                Content="Label"
-                                FontSize="14" />
-                            <Label
-                                Margin="0,67,5,0"
-                                HorizontalAlignment="Right"
-                                VerticalAlignment="Top"
-                                Content="Label"
-                                FontSize="14" />
-                            <Label
-                                Margin="0,96,5,0"
-                                HorizontalAlignment="Right"
-                                VerticalAlignment="Top"
-                                Content="Label"
-                                FontSize="14" />
-                        </Grid>
-                    </GroupBox>
-                    <GroupBox
-                        Width="256"
-                        Height="118"
-                        Margin="977,352,0,0"
-                        HorizontalAlignment="Left"
-                        VerticalAlignment="Top"
-                        FontSize="16"
-                        Header="Common:">
-                        <Grid
-                            Margin="0,0,-3.4,-3"
-                            HorizontalAlignment="Stretch"
-                            VerticalAlignment="Stretch">
-                            <Label
-                                Height="28"
-                                Margin="5,5,0,0"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Top"
-                                Content="Age:"
-                                FontSize="14" />
-                            <Label
-                                Height="28"
-                                Margin="5,33,0,0"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Top"
-                                Content="Date of birth:"
-                                FontSize="14" />
-                            <Label
-                                Height="28"
-                                Margin="0,5,5,0"
-                                HorizontalAlignment="Right"
-                                VerticalAlignment="Top"
-                                Content="Label"
-                                FontSize="14" />
-                            <Label
-                                Height="28"
-                                Margin="0,33,5.4,0"
-                                HorizontalAlignment="Right"
-                                VerticalAlignment="Top"
-                                Content="Label"
-                                FontSize="14" />
-                            <Label
-                                Height="28"
-                                Margin="5,61,0,0"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Top"
-                                Content="Gender:"
-                                FontSize="14" />
-                            <Label
-                                Height="28"
-                                Margin="0,61,5.4,0"
-                                HorizontalAlignment="Right"
-                                VerticalAlignment="Top"
-                                Content="Label"
-                                FontSize="14" />
-                        </Grid>
-                    </GroupBox>
-                    <GroupBox
-                        Width="285"
-                        Height="153"
-                        Margin="676,352,0,0"
-                        HorizontalAlignment="Left"
-                        VerticalAlignment="Top"
-                        FontSize="16"
-                        Header="Communication:">
-                        <Grid
-                            Margin="0,0,-3.2,-3"
-                            HorizontalAlignment="Stretch"
-                            VerticalAlignment="Stretch">
-                            <Label
-                                Margin="0,9,0,0"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Top"
-                                Content="Mobile Number 1:"
-                                FontSize="14" />
-                            <Label
-                                Margin="0,9,5,0"
-                                HorizontalAlignment="Right"
-                                VerticalAlignment="Top"
-                                Content="+380636429376"
-                                FontSize="14" />
-                            <Label
-                                Margin="0,38,0,0"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Top"
-                                Content="Mobile Number 2:"
-                                FontSize="14" />
-                            <Label
-                                Margin="0,67,0,0"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Top"
-                                Content="Home Number:"
-                                FontSize="14" />
-                            <Label
-                                Margin="0,96,0,0"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Top"
-                                Content="E-mail:"
-                                FontSize="14" />
-                            <Label
-                                Margin="0,38,5,0"
-                                HorizontalAlignment="Right"
-                                VerticalAlignment="Top"
-                                Content="+380935727941"
-                                FontSize="14" />
-                            <Label
-                                Margin="0,67,5,0"
-                                HorizontalAlignment="Right"
-                                VerticalAlignment="Top"
-                                Content="2700456"
-                                FontSize="14" />
-                            <Label
-                                Margin="0,96,5,0"
-                                HorizontalAlignment="Right"
-                                VerticalAlignment="Top"
-                                Content="1231233"
-                                FontSize="14" />
-                        </Grid>
-                    </GroupBox>
-                    <Border
-                        Width="172"
-                        Height="204"
-                        Margin="0,135,20,0"
-                        HorizontalAlignment="Right"
-                        VerticalAlignment="Top"
-                        BorderBrush="Black"
-                        BorderThickness="1" />
-                </Grid>
+            <TabItem Header="" Style="{StaticResource TabItemStyle}">
+                <Grid Background="White" />
             </TabItem>
             <TabItem Header="Пацієнти" Style="{StaticResource TabItemStyle}">
-                <Grid Background="#FFE5E5E5">
+                <Grid Background="White">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="10" />
                         <RowDefinition Height="10" />
@@ -237,8 +39,6 @@
                         Grid.Column="0"
                         Grid.ColumnSpan="3"
                         Margin="0,2.4,0.4,2.2" />
-
-
                     <Grid
                         Grid.Row="1"
                         Grid.RowSpan="2"
@@ -295,7 +95,9 @@
                             Grid.Row="2"
                             Grid.Column="2"
                             Grid.ColumnSpan="2"
-                            Content="Search" />
+                            Background="White"
+                            Content="Search"
+                            FontSize="14" />
                         <Label
                             Grid.Row="4"
                             Grid.Column="1"
@@ -350,27 +152,39 @@
                                 Grid.Column="1"
                                 Orientation="Horizontal">
                                 <TextBox
+                                    x:Name="TextBox_PatientsFullName"
                                     VerticalContentAlignment="Center"
-                                    Background="#FFE5E5E5"
-                                    BorderBrush="{x:Null}"
-                                    BorderThickness="0"
-                                    FontSize="14"
-                                    IsReadOnly="True"
-                                    Text="Bogdan Fedorenko"
-                                    TextWrapping="Wrap" />
-                                <Image RenderTransformOrigin="0.5,0.5" Source="..\Resources\Images\Male.png">
+                                    FontSize="18"
+                                    Style="{StaticResource CopybleReadOnlyTextBox}"
+                                    Text="Bogdan Fedorenko" />
+                                <Image
+                                    Width="50"
+                                    Height="{Binding ElementName=TextBox_PatientsFullName, Path=Height}"
+                                    RenderOptions.BitmapScalingMode="Fant"
+                                    RenderTransformOrigin="0.5,0.5"
+                                    Source="{StaticResource IdCardIcon}">
                                     <Image.RenderTransform>
                                         <TransformGroup>
-                                            <ScaleTransform ScaleX="0.5" ScaleY="0.5" />
+                                            <ScaleTransform ScaleX="0.8" ScaleY="0.8" />
                                             <SkewTransform />
                                             <RotateTransform />
                                             <TranslateTransform />
                                         </TransformGroup>
                                     </Image.RenderTransform>
                                 </Image>
+                                <TextBox
+                                    Margin="0,0,0,5.6"
+                                    VerticalContentAlignment="Bottom"
+                                    FontSize="13"
+                                    Style="{StaticResource CopybleReadOnlyTextBox}"
+                                    Text="7588-5142-5214-8743" />
                             </StackPanel>
                             <Grid Grid.Row="2" Grid.Column="2">
                                 <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                                    <Button
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Content="Refresh" />
                                     <Button
                                         HorizontalAlignment="Center"
                                         VerticalAlignment="Center"
@@ -402,61 +216,114 @@
                                     </Grid.ColumnDefinitions>
 
                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                        <Image Source="..\Resources\Images\PatientPhoto.png" />
+                                        <Image
+                                            Margin="10,10,10,10"
+                                            RenderOptions.BitmapScalingMode="Fant"
+                                            Source="{StaticResource PatientPhotoIcon}" />
                                     </Border>
 
                                     <StackPanel Grid.Row="0" Grid.Column="2">
-                                        <TextBox
-                                            Height="20"
-                                            Style="{StaticResource CopybleReadOnlyTextBox}"
-                                            Text="27 years 17.01.1990" />
-                                        <TextBox
-                                            Height="20"
-                                            Style="{StaticResource CopybleReadOnlyTextBox}"
-                                            Text="+380636429376" />
-                                        <TextBox
-                                            Height="20"
-                                            Style="{StaticResource CopybleReadOnlyTextBox}"
-                                            Text="270-04-29" />
-                                        <TextBox
-                                            Height="20"
-                                            Style="{StaticResource CopybleReadOnlyTextBox}"
-                                            Text="bogdan.fedorenko.stydy@gmail.com" />
-                                        <!--<TextBox
-                                            Height="20"
-                                            Style="{StaticResource CopybleReadOnlyTextBox}"
-                                            Text="Kyiv 02200" />
-                                        <TextBox
-                                            Height="20"
-                                            Style="{StaticResource CopybleReadOnlyTextBox}"
-                                            Text="Volynska St, 16" />-->
-                                    </StackPanel>
-                                    <StackPanel Grid.Row="0" Grid.Column="4">
-                                        <TextBox
-                                            Height="20"
-                                            Style="{StaticResource CopybleReadOnlyTextBox}"
-                                            Text="Kyiv, 02200" />
-                                        <TextBox
-                                            Height="20"
-                                            Style="{StaticResource CopybleReadOnlyTextBox}"
-                                            Text="Volynska St, 16" />
-                                        <TextBox
-                                            Height="20"
-                                            Style="{StaticResource CopybleReadOnlyTextBox}"
-                                            Text="Apartment: 34" />
+                                        <StackPanel Height="34" Orientation="Horizontal">
+                                            <Image
+                                                Height="28"
+                                                VerticalAlignment="Top"
+                                                RenderOptions.BitmapScalingMode="Fant"
+                                                Source="{StaticResource MaleIcon}" />
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image
+                                                Height="{Binding ElementName=TextBox_PatientAge, Path=Height}"
+                                                Source="{StaticResource BirthdayCakeIcon}"
+                                                Style="{StaticResource LittleIconStyle}" />
+                                            <TextBox
+                                                x:Name="TextBox_PatientAge"
+                                                Height="20"
+                                                VerticalContentAlignment="Bottom"
+                                                Style="{StaticResource CopybleReadOnlyTextBox}"
+                                                Text="27 years 17.01.1990" />
+                                        </StackPanel>
+
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image
+                                                Height="{Binding ElementName=TextBox_MobileNumber, Path=Height}"
+                                                Source="{StaticResource SmartphoneIcon}"
+                                                Style="{StaticResource LittleIconStyle}" />
+                                            <TextBox
+                                                x:Name="TextBox_MobileNumber"
+                                                Height="20"
+                                                VerticalContentAlignment="Bottom"
+                                                Style="{StaticResource CopybleReadOnlyTextBox}"
+                                                Text="0636429376" />
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image
+                                                Height="{Binding ElementName=TextBox_HomeNumber, Path=Height}"
+                                                Source="{StaticResource TelephoneIcon}"
+                                                Style="{StaticResource LittleIconStyle}" />
+                                            <TextBox
+                                                x:Name="TextBox_HomeNumber"
+                                                Height="20"
+                                                VerticalContentAlignment="Bottom"
+                                                Style="{StaticResource CopybleReadOnlyTextBox}"
+                                                Text="270-04-29" />
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image
+                                                Height="{Binding ElementName=TextBox_PatientsEmail, Path=Height}"
+                                                Source="{StaticResource ArrobaIcon}"
+                                                Style="{StaticResource LittleIconStyle}" />
+                                            <TextBox
+                                                x:Name="TextBox_PatientsEmail"
+                                                Height="20"
+                                                VerticalContentAlignment="Bottom"
+                                                Style="{StaticResource CopybleReadOnlyTextBox}"
+                                                Text="bogdan.fedorenko.stydy@gmail.com" />
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image
+                                                Height="{Binding ElementName=TextBox_PatientsAdress, Path=Height}"
+                                                Source="{StaticResource PlaceholderIcon}"
+                                                Style="{StaticResource LittleIconStyle}" />
+                                            <TextBox
+                                                x:Name="TextBox_PatientsAdress"
+                                                Height="20"
+                                                VerticalContentAlignment="Bottom"
+                                                Style="{StaticResource CopybleReadOnlyTextBox}"
+                                                Text="Kyiv, Volynska St, 16" />
+                                        </StackPanel>
                                     </StackPanel>
                                 </Grid>
-                                <Grid Grid.Row="2" />
+                                <Grid Grid.Row="2">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="34" />
+                                        <RowDefinition Height="10" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="5" />
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="270*" />
+                                    </Grid.RowDefinitions>
+                                    <Label
+                                        VerticalContentAlignment="Bottom"
+                                        Content="Doctor appointments"
+                                        FontSize="14" />
+                                    <ScrollViewer Grid.Row="2">
+                                        <ListBox />
+                                    </ScrollViewer>
+                                    <StackPanel Grid.Row="4" Orientation="Horizontal">
+                                        <Button Content="+ Add appointment" />
+                                    </StackPanel>
+
+                                </Grid>
                             </Grid>
                         </Grid>
                     </ScrollViewer>
                 </Grid>
             </TabItem>
             <TabItem Header="Лікарі" Style="{StaticResource TabItemStyle}">
-                <Grid Background="#FFE5E5E5" />
+                <Grid Background="White" />
             </TabItem>
             <TabItem Header="Розклад" Style="{StaticResource TabItemStyle}">
-                <Grid Background="#FFE5E5E5" />
+                <Grid Background="White" />
             </TabItem>
             <ListBox Width="100" Height="100" />
         </TabControl>

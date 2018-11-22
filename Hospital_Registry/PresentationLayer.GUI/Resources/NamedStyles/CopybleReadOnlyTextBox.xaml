@@ -4,7 +4,7 @@
     xmlns:local="clr-namespace:PresentationLayer.GUI.Resources.NamedStyles">
 
     <Style x:Key="CopybleReadOnlyTextBox" TargetType="{x:Type TextBox}">
-        <Setter Property="Background" Value="#FFE5E5E5" />
+        <Setter Property="Background" Value="White" />
         <Setter Property="BorderBrush" Value="{x:Null}" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="IsReadOnly" Value="true" />
