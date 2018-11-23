@@ -161,28 +161,11 @@
                                     Style="{StaticResource CopybleReadOnlyMainTextStyle}"
                                     Text="Bogdan Fedorenko" />
                                 <Image
-                                    Width="40"
-                                    Height="{Binding ElementName=TextBox_PatientsFullName, Path=Height}"
-                                    Margin="0,-2,0,-8.4"
+                                    Source="{StaticResource MonoMaleIcon}"
                                     RenderOptions.BitmapScalingMode="Fant"
-                                    RenderTransformOrigin="0.5,0.5"
-                                    Source="{StaticResource IdCardIcon}">
-                                    <Image.RenderTransform>
-                                        <TransformGroup>
-                                            <ScaleTransform ScaleX="0.6" ScaleY="0.6" />
-                                            <SkewTransform />
-                                            <RotateTransform />
-                                            <TranslateTransform />
-                                        </TransformGroup>
-                                    </Image.RenderTransform>
+                                    Width="15">
                                 </Image>
-                                <TextBox
-                                    Margin="0,0,0,2.6"
-                                    VerticalContentAlignment="Bottom"
-                                    FontSize="13"
-                                    Foreground="#FF666060"
-                                    Style="{StaticResource CopybleReadOnlyTextBox}"
-                                    Text="7588-5142-5214-8743" />
+
                             </StackPanel>
                             <Grid Grid.Row="2" Grid.Column="2">
                                 <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
@@ -220,20 +203,27 @@
                                         <ColumnDefinition Width="Auto" />
                                     </Grid.ColumnDefinitions>
 
-                                    <Border BorderBrush="Gray" BorderThickness="1">
+                                    <Border BorderBrush="Gray" BorderThickness="0">
                                         <Image
-                                            Margin="10,10,10,10"
                                             RenderOptions.BitmapScalingMode="Fant"
-                                            Source="{StaticResource PatientPhotoIcon}" />
+                                            Source="{StaticResource PatientPhoto2Icon}" />
                                     </Border>
 
                                     <StackPanel Grid.Row="0" Grid.Column="2">
-                                        <StackPanel Height="34" Orientation="Horizontal">
+                                        <StackPanel Orientation="Horizontal">
                                             <Image
-                                                Height="28"
-                                                VerticalAlignment="Top"
-                                                RenderOptions.BitmapScalingMode="Fant"
-                                                Source="{StaticResource MaleIcon}" />
+                                                Height="{Binding ElementName=TextBox_PatientsFullName, Path=Height}"
+                                                Source="{StaticResource IdCardIcon}"
+                                                Style="{StaticResource LittleIconStyle}">
+                                                
+                                            </Image>
+                                            <TextBox
+                                                Margin="0,0,0,2.6"
+                                                VerticalContentAlignment="Bottom"
+                                                FontSize="13"
+                                                Foreground="#FF666060"
+                                                Style="{StaticResource CopybleReadOnlyTextBox}"
+                                                Text="7588-5142-5214-8743" />
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal">
                                             <Image

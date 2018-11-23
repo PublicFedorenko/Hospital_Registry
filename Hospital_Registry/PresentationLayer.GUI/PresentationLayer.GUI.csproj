@@ -138,13 +138,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\Arroba.png" />
-    <Resource Include="Resources\Images\Handset.png" />
     <Resource Include="Resources\Images\Placeholder.png" />
     <Resource Include="Resources\Images\Smartphone.png" />
     <Resource Include="Resources\Images\Telephone.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Images\Confetti.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\Birthday-cake.png" />
@@ -158,6 +154,18 @@
   <ItemGroup>
     <Resource Include="Resources\Images\Male.png" />
     <Resource Include="Resources\Images\Female.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\ColorPatientPhoto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\MonoMale.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\PatientPhoto2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\PatientPhoto1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
