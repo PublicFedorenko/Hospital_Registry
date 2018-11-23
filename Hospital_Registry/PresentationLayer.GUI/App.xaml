@@ -11,7 +11,11 @@
                 <ResourceDictionary Source="Resources\NamedStyles\TabItemStyle.xaml" />
                 <ResourceDictionary Source="Resources\NamedStyles\CopybleReadOnlyTextBox.xaml" />
                 <ResourceDictionary Source="Resources\NamedStyles\LittleIconStyle.xaml" />
+                <ResourceDictionary Source="Resources\NamedStyles\MainFontStyle.xaml" />
+                <ResourceDictionary Source="Resources\NamedStyles\CopybleReadOnlyMainTextStyle.xaml" />
+                <ResourceDictionary Source="Resources\NamedStyles\SecondaryTextStyle.xaml" />
                 <ResourceDictionary Source="Resources\Images\Images.xaml" />
+                <ResourceDictionary Source="Resources\Brushes\SecondaryTextBrush.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

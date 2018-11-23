@@ -55,7 +55,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Resources\Brushes\SecondaryTextBrush.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\Images\Images.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\NamedStyles\CopybleReadOnlyMainTextStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\NamedStyles\CopybleReadOnlySecondaryTextStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -64,6 +76,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Resources\NamedStyles\LittleIconStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\NamedStyles\MainFontStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\NamedStyles\SecondaryTextStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -114,9 +134,6 @@
     <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Images\Male.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\Images\PatientPhoto.png" />
   </ItemGroup>
   <ItemGroup>
@@ -127,9 +144,6 @@
     <Resource Include="Resources\Images\Telephone.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Images\Female.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\Images\Confetti.png" />
   </ItemGroup>
   <ItemGroup>
@@ -137,6 +151,13 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\Id-card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Apartment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Male.png" />
+    <Resource Include="Resources\Images\Female.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -13,4 +13,5 @@
     <BitmapImage x:Key="ConfettiIcon" UriSource="Confetti.png" />
     <BitmapImage x:Key="BirthdayCakeIcon" UriSource="Birthday-cake.png" />
     <BitmapImage x:Key="IdCardIcon" UriSource="Id-card.png" />
+    <BitmapImage x:Key="ApartmentIcon" UriSource="Apartment.png" />
 </ResourceDictionary>
