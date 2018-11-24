@@ -74,12 +74,13 @@
                             Grid.ColumnSpan="3">
                             <ListBox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                         </ScrollViewer>
-                        <Label
+                        <TextBox
                             Grid.Row="0"
                             Grid.Column="1"
-                            Content="All patients"
+                            FontFamily="{StaticResource MainFontFamily}"
                             FontSize="20"
-                            Style="{StaticResource MainFontStyle}" />
+                            Style="{StaticResource CopybleReadOnlyTextBoxStyle}"
+                            Text="All patients" />
                         <Button
                             Grid.Column="2"
                             HorizontalAlignment="Center"
@@ -99,13 +100,14 @@
                             Background="White"
                             Content="Search"
                             FontSize="14" />
-                        <Label
+                        <TextBox
                             Grid.Row="4"
                             Grid.Column="1"
                             Grid.ColumnSpan="3"
                             VerticalContentAlignment="Center"
-                            Content="Enter request and press Search or Enter key."
-                            Foreground="#FF797979" />
+                            Foreground="#FF797979"
+                            Style="{StaticResource CopybleReadOnlyTextBoxStyle}"
+                            Text="Enter request and press Search or Enter key." />
                         <Separator
                             Grid.Row="1"
                             Grid.Column="1"
@@ -143,40 +145,46 @@
                                 <ColumnDefinition Width="20" />
                             </Grid.ColumnDefinitions>
 
-                            <Label
+                            <TextBox
                                 Grid.Row="0"
                                 Grid.Column="1"
                                 VerticalContentAlignment="Center"
-                                Content="Patients card"
+                                FontFamily="{StaticResource MainFontFamily}"
                                 FontSize="20"
-                                Style="{StaticResource MainFontStyle}" />
+                                Style="{StaticResource CopybleReadOnlyTextBoxStyle}"
+                                Text="Patients card" />
                             <StackPanel
                                 Grid.Row="2"
                                 Grid.Column="1"
                                 Orientation="Horizontal">
+                                <Image
+                                    Width="15"
+                                    RenderOptions.BitmapScalingMode="Fant"
+                                    Source="{StaticResource MonoMaleIcon}" />
+                                <Label Width="4" />
                                 <TextBox
                                     x:Name="TextBox_PatientsFullName"
                                     VerticalContentAlignment="Center"
+                                    FontFamily="{StaticResource MainFontFamily}"
                                     FontSize="17"
-                                    Style="{StaticResource CopybleReadOnlyMainTextStyle}"
+                                    Style="{StaticResource CopybleReadOnlyTextBoxStyle}"
                                     Text="Bogdan Fedorenko" />
-                                <Image
-                                    Source="{StaticResource MonoMaleIcon}"
-                                    RenderOptions.BitmapScalingMode="Fant"
-                                    Width="15">
-                                </Image>
+                                <Label Width="10" />
+                                <Button
+                                    Width="{Binding Path=Height, RelativeSource={RelativeSource Self}}"
+                                    Height="15"
+                                    Background="{StaticResource EditImageBrush}"
+                                    Style="{StaticResource BorderlessServiceButtonStyle}" />
 
                             </StackPanel>
                             <Grid Grid.Row="2" Grid.Column="2">
                                 <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
                                     <Button
-                                        HorizontalAlignment="Center"
-                                        VerticalAlignment="Center"
-                                        Content="Refresh" />
-                                    <Button
-                                        HorizontalAlignment="Center"
-                                        VerticalAlignment="Center"
-                                        Content="Edit" />
+                                        Width="{Binding Path=Height, RelativeSource={RelativeSource Self}}"
+                                        Height="15"
+                                        Background="{StaticResource RefreshImageBrush}"
+                                        Style="{StaticResource BorderlessServiceButtonStyle}" />
+
                                 </StackPanel>
                             </Grid>
                             <Separator
@@ -204,66 +212,62 @@
                                     </Grid.ColumnDefinitions>
 
                                     <Border BorderBrush="Gray" BorderThickness="0">
-                                        <Image
-                                            RenderOptions.BitmapScalingMode="Fant"
-                                            Source="{StaticResource PatientPhoto2Icon}" />
+                                        <Image RenderOptions.BitmapScalingMode="Fant" Source="{StaticResource PatientPhoto2Icon}" />
                                     </Border>
 
                                     <StackPanel Grid.Row="0" Grid.Column="2">
                                         <StackPanel Orientation="Horizontal">
                                             <Image
                                                 Height="{Binding ElementName=TextBox_PatientsFullName, Path=Height}"
-                                                Source="{StaticResource IdCardIcon}"
-                                                Style="{StaticResource LittleIconStyle}">
-                                                
-                                            </Image>
+                                                Source="{StaticResource IdCard1Icon}"
+                                                Style="{StaticResource LittleIconStyle}" />
                                             <TextBox
-                                                Margin="0,0,0,2.6"
+                                                Height="20"
                                                 VerticalContentAlignment="Bottom"
-                                                FontSize="13"
-                                                Foreground="#FF666060"
-                                                Style="{StaticResource CopybleReadOnlyTextBox}"
+                                                Foreground="{StaticResource SecondaryTextBrush}"
+                                                Style="{StaticResource CopybleReadOnlyTextBoxStyle}"
                                                 Text="7588-5142-5214-8743" />
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal">
                                             <Image
                                                 Height="{Binding ElementName=TextBox_PatientAge, Path=Height}"
-                                                Source="{StaticResource BirthdayCakeIcon}"
+                                                Source="{StaticResource BirthdayCake2Icon}"
                                                 Style="{StaticResource LittleIconStyle}" />
                                             <TextBox
                                                 x:Name="TextBox_PatientAge"
                                                 Height="20"
                                                 VerticalContentAlignment="Bottom"
                                                 Foreground="{StaticResource SecondaryTextBrush}"
-                                                Style="{StaticResource CopybleReadOnlyTextBox}"
+                                                Style="{StaticResource CopybleReadOnlyTextBoxStyle}"
                                                 Text="27 years old, 17.01.1990" />
                                         </StackPanel>
 
-                                        <StackPanel Orientation="Horizontal">
-                                            <Image
-                                                Height="{Binding ElementName=TextBox_MobileNumber, Path=Height}"
-                                                Source="{StaticResource SmartphoneIcon}"
-                                                Style="{StaticResource LittleIconStyle}" />
-                                            <TextBox
-                                                x:Name="TextBox_MobileNumber"
-                                                Height="20"
-                                                VerticalContentAlignment="Bottom"
-                                                Foreground="{StaticResource SecondaryTextBrush}"
-                                                Style="{StaticResource CopybleReadOnlyTextBox}"
-                                                Text="0636429376" />
-                                        </StackPanel>
+
                                         <StackPanel Orientation="Horizontal">
                                             <Image
                                                 Height="{Binding ElementName=TextBox_HomeNumber, Path=Height}"
-                                                Source="{StaticResource TelephoneIcon}"
+                                                Source="{StaticResource HandsetIcon}"
                                                 Style="{StaticResource LittleIconStyle}" />
                                             <TextBox
                                                 x:Name="TextBox_HomeNumber"
                                                 Height="20"
                                                 VerticalContentAlignment="Bottom"
                                                 Foreground="{StaticResource SecondaryTextBrush}"
-                                                Style="{StaticResource CopybleReadOnlyTextBox}"
+                                                Style="{StaticResource CopybleReadOnlyTextBoxStyle}"
                                                 Text="270-04-29" />
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image
+                                                Height="{Binding ElementName=TextBox_MobileNumber, Path=Height}"
+                                                Source="{StaticResource Smartphone1Icon}"
+                                                Style="{StaticResource LittleIconStyle}" />
+                                            <TextBox
+                                                x:Name="TextBox_MobileNumber"
+                                                Height="20"
+                                                VerticalContentAlignment="Bottom"
+                                                Foreground="{StaticResource SecondaryTextBrush}"
+                                                Style="{StaticResource CopybleReadOnlyTextBoxStyle}"
+                                                Text="0636429376" />
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal">
                                             <Image
@@ -275,7 +279,7 @@
                                                 Height="20"
                                                 VerticalContentAlignment="Bottom"
                                                 Foreground="{StaticResource SecondaryTextBrush}"
-                                                Style="{StaticResource CopybleReadOnlyTextBox}"
+                                                Style="{StaticResource CopybleReadOnlyTextBoxStyle}"
                                                 Text="bogdan.fedorenko.stydy@gmail.com" />
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal">
@@ -288,7 +292,7 @@
                                                 Height="20"
                                                 VerticalContentAlignment="Bottom"
                                                 Foreground="{StaticResource SecondaryTextBrush}"
-                                                Style="{StaticResource CopybleReadOnlyTextBox}"
+                                                Style="{StaticResource CopybleReadOnlyTextBoxStyle}"
                                                 Text="Kyiv, Volynska St, 16" />
                                             <Image
                                                 Width="28"
@@ -299,7 +303,7 @@
                                                 Height="20"
                                                 VerticalContentAlignment="Bottom"
                                                 Foreground="{StaticResource SecondaryTextBrush}"
-                                                Style="{StaticResource CopybleReadOnlyTextBox}"
+                                                Style="{StaticResource CopybleReadOnlyTextBoxStyle}"
                                                 Text="35" />
                                         </StackPanel>
                                     </StackPanel>
@@ -313,16 +317,20 @@
                                         <RowDefinition Height="20" />
                                         <RowDefinition Height="270*" />
                                     </Grid.RowDefinitions>
-                                    <Label
+                                    <TextBox
                                         VerticalContentAlignment="Bottom"
-                                        Content="Doctor appointments"
                                         FontSize="17"
-                                        Style="{StaticResource MainFontStyle}" />
+                                        Style="{StaticResource CopybleReadOnlyTextBoxStyle}"
+                                        Text="Doctor appointments" />
                                     <ScrollViewer Grid.Row="2">
                                         <ListBox />
                                     </ScrollViewer>
                                     <StackPanel Grid.Row="4" Orientation="Horizontal">
-                                        <Button Content="+ Add appointment" />
+                                        <Button
+                                            Content="+ Add appointment"
+                                            FontFamily="{StaticResource MainFontFamily}"
+                                            Foreground="{StaticResource ServiceButtonsTextBrush}"
+                                            Style="{StaticResource BorderlessServiceButtonStyle}" />
                                     </StackPanel>
 
                                 </Grid>

@@ -55,7 +55,35 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Resources\Brushes\Brushes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\Brushes\SecondaryTextBrush.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Brushes\ServiceButtonsTextBrush.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Fonts\Fonts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Fonts\MainFontFamily.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ImageBrushes\EditImageBrush.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ImageBrushes\ImageBrushes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ImageBrushes\RefreshImageBrush.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -63,15 +91,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Resources\NamedStyles\CopybleReadOnlyMainTextStyle.xaml">
+    <Page Include="Resources\NamedStyles\BorderlessServiceButtonStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Resources\NamedStyles\CopybleReadOnlySecondaryTextStyle.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Resources\NamedStyles\CopybleReadOnlyTextBox.xaml">
+    <Page Include="Resources\NamedStyles\CopybleReadOnlyTextBoxStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -79,11 +103,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Resources\NamedStyles\MainFontStyle.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Resources\NamedStyles\SecondaryTextStyle.xaml">
+    <Page Include="Resources\NamedStyles\NamedStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -166,6 +186,33 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\PatientPhoto1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\MonoRefresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Handset.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Birthday-cake1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Telephone1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Birthday-cake2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Smartphone1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Id-card1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

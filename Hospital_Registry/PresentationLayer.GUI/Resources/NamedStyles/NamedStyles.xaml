@@ -1,0 +1,11 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:PresentationLayer.GUI.Resources.NamedStyles">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="BorderlessServiceButtonStyle.xaml" />
+        <ResourceDictionary Source="CopybleReadOnlyTextBoxStyle.xaml" />
+        <ResourceDictionary Source="LittleIconStyle.xaml" />
+        <ResourceDictionary Source="TabItemStyle.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>
