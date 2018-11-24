@@ -5,5 +5,7 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="RefreshImageBrush.xaml" />
         <ResourceDictionary Source="EditImageBrush.xaml" />
+        <ResourceDictionary Source="AddUserImageBrush.xaml" />
+        <ResourceDictionary Source="RemoveUserImageBrush.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

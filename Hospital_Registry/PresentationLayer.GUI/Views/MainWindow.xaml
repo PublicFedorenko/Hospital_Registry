@@ -83,16 +83,16 @@
                             Text="All patients" />
                         <Button
                             Grid.Column="2"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
-                            Content="Add"
-                            FontSize="14" />
+                            Width="{Binding Path=Height, RelativeSource={RelativeSource Self}}"
+                            Height="25"
+                            Background="{StaticResource AddUserImageBrush}"
+                            Style="{StaticResource BorderlessServiceButtonStyle}" />
                         <Button
                             Grid.Column="3"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
-                            Content="Rem"
-                            FontSize="14" />
+                            Width="{Binding Path=Height, RelativeSource={RelativeSource Self}}"
+                            Height="25"
+                            Background="{StaticResource RemoveUserImageBrush}"
+                            Style="{StaticResource BorderlessServiceButtonStyle}" />
                         <Button
                             Grid.Row="2"
                             Grid.Column="2"
@@ -158,7 +158,7 @@
                                 Grid.Column="1"
                                 Orientation="Horizontal">
                                 <Image
-                                    Width="15"
+                                    Width="16"
                                     RenderOptions.BitmapScalingMode="Fant"
                                     Source="{StaticResource MonoMaleIcon}" />
                                 <Label Width="4" />
@@ -172,7 +172,7 @@
                                 <Label Width="10" />
                                 <Button
                                     Width="{Binding Path=Height, RelativeSource={RelativeSource Self}}"
-                                    Height="15"
+                                    Height="16"
                                     Background="{StaticResource EditImageBrush}"
                                     Style="{StaticResource BorderlessServiceButtonStyle}" />
 
@@ -181,7 +181,7 @@
                                 <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
                                     <Button
                                         Width="{Binding Path=Height, RelativeSource={RelativeSource Self}}"
-                                        Height="15"
+                                        Height="16"
                                         Background="{StaticResource RefreshImageBrush}"
                                         Style="{StaticResource BorderlessServiceButtonStyle}" />
 
