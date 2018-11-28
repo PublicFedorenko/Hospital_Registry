@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLogicLayer.Entities.Misc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,8 +15,7 @@ namespace BusinessLogicLayer.Entities.Entities
         private DateTime _startedACareer;
         private string _education;
         private string _specialization;
-        private double _salary;
-        private List<DateTime> _shedule;
+        private DateTime[] _shedule;
         #endregion
 
         #region Properties
@@ -39,23 +39,20 @@ namespace BusinessLogicLayer.Entities.Entities
                 Experience = DateTime.Now.Year - _startedACareer.Year;
             }
         }
-        public string Education { get => _education; set => _education = value; }
-        public string Specialization { get => _specialization; set => _specialization = value; }
-        public double Salary
-        {
-            get => _salary;
-            set
-            {
-                if (value > 0)
-                    _salary = value;
-            }
-        }
-        public List<DateTime> Shedule { get => _shedule; set => _shedule = value; }
+        public string Education { get; set; }
+        public string Specialization { get; set; }
+        public List<Visit> VisitsQueue { get; set; }
         #endregion
 
-        public Doctor() { }
+        public Doctor()
+        {
+            _shedule = new DateTime[7];
+        }
         public Doctor(string firstName, string lastName, DateTime dateOfBirth, Gender gender)
-           : base(firstName, lastName, dateOfBirth, gender) { }
+           : base(firstName, lastName, dateOfBirth, gender)
+        {
+            _shedule = new DateTime[7];
+        }
 
     }
 }

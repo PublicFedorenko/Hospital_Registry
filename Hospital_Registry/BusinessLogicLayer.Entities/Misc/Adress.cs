@@ -12,14 +12,12 @@ namespace BusinessLogicLayer.Entities.Misc
         public string City { get; set; }
         public string Street { get; set; }
         public string Building { get; set; }
-        public int Apartment { get; set; }
         public Adress() { }
         public Adress(string city, string street, string building, int apartment)
         {
             City = city;
             Street = street;
             Building = building;
-            Apartment = apartment;
         }
     }
 }

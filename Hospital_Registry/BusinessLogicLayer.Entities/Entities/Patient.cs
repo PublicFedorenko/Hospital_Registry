@@ -19,6 +19,11 @@ namespace BusinessLogicLayer.Entities.Entities
         #endregion
 
         #region Properties
+        public int Id { get; set; }
+        public List<Visit> SheduledVisits { get; set; }
+        public List<Visit> VisitsHistory { get; set; }
+        public Adress Adress { get; set; }
+
         public string MobileNumber
         {
             get => _mobileNumber;
@@ -43,7 +48,6 @@ namespace BusinessLogicLayer.Entities.Entities
                     throw new ArgumentException("Invalid home number.");
             }
         }
-        public Adress Adress { get => _adress; set => _adress = value; }
         public string Email
         {
             get => _email;

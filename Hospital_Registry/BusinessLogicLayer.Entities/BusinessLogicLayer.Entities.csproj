@@ -45,6 +45,7 @@
     <Compile Include="Entities\Patient.cs" />
     <Compile Include="Entities\Person.cs" />
     <Compile Include="Misc\Adress.cs" />
+    <Compile Include="Misc\Visit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
