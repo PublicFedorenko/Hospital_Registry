@@ -19,6 +19,7 @@ namespace BusinessLogicLayer.Entities.Entities
         #endregion
 
         #region Properties
+        public int Id { get; set; }
         public int Experience
         {
             get => _experience;

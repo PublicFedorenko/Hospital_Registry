@@ -9,6 +9,7 @@ namespace BusinessLogicLayer.Entities.Misc
 {
     public class Visit
     {
+        public int Id { get; set; }
         public DateTime Date { get; set; }
         public Doctor Doctor { get; set; }
         public string Cause { get; set; }
