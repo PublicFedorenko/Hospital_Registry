@@ -50,6 +50,14 @@
   <ItemGroup>
     <Compile Include="HospitalRegistryContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\DoctorRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IDoctorRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IPatientRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IUnitOfWork.cs" />
+    <Compile Include="Repositories\PatientRepository.cs" />
+    <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Repositories\UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
