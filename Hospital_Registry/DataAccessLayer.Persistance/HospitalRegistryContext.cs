@@ -10,7 +10,12 @@ namespace DataAccessLayer.Persistance
 {
     public class HospitalRegistryContext : DbContext
     {
-        DbSet<Patient> Patients { get; set; }
-        DbSet<Doctor> Doctors { get; set; }
+        public DbSet<Patient> Patients { get; }
+        public DbSet<Doctor> Doctors { get; }
+
+        public HospitalRegistryContext()
+            :base("name=HospitalRegistryContext")
+        {
+        }
     }
 }
