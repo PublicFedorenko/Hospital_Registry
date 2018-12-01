@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B897E36C-B1B1-48FD-A180-AA930DF5D548}</ProjectGuid>
+    <ProjectGuid>{A7B17C28-D4BD-4364-9509-E0E246575D0B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DataAccessLayer.Persistance</RootNamespace>
@@ -60,14 +60,14 @@
     <Compile Include="Repositories\UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\BusinessLogicLayer.Entities\BusinessLogicLayer.Entities.csproj">
       <Project>{ff06e1ea-d02d-41a7-942a-dcb5d64d6bb2}</Project>
       <Name>BusinessLogicLayer.Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
