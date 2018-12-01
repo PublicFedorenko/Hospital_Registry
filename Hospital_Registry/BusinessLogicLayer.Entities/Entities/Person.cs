@@ -11,10 +11,10 @@ namespace BusinessLogicLayer.Entities.Entities
     [Serializable]
     public class Person
     {
-        public string FirstName { get; protected set; }
-        public string LastName { get; protected set; }
-        public DateTime DateOfBirth { get; protected set; }
-        public Gender Gender { get; protected set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public DateTime DateOfBirth { get; set; }
+        public Gender Gender { get; set; }
         public Person() { }
         public Person(string firstName, string lastName, DateTime dateOfBirth, Gender gender)
         {
