@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace PresentationLayer.GUI.ViewModels.Interfaces
 {
-    interface IDelegateCommand : ICommand
+    public interface IDelegateCommand : ICommand
     {
         void RaiseCanExecuteChanged();
     }
