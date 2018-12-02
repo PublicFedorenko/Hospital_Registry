@@ -1,8 +1,10 @@
 ﻿using BusinessLogicLayer.Entities.Entities;
+using BusinessLogicLayer.Entities.Misc;
 using BusinessLogicLayer.Services;
 using PresentationLayer.GUI.ViewModels.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -14,23 +16,66 @@ namespace PresentationLayer.GUI.ViewModels
     {
         private readonly HospitalRegistryService _hospitalRegistryService = new HospitalRegistryService();
 
+        #region Commands
         public IDelegateCommand AddPatientCommand { get; protected set; }
+        public IDelegateCommand RemovePatientCommand { get; protected set; }
+        #endregion
 
+        #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+        #endregion
 
         public MainWindowViewModel()
         {
             AddPatientCommand = new DelegateCommand(ExecuteAddPatient);
+            RemovePatientCommand = new DelegateCommand(ExecuteRemovePatient, CanExecuteRemovePatient);
+        }
+
+        public ReadOnlyObservableCollection<Patient> PatientsList
+        {
+            get => _hospitalRegistryService.Patients;
         }
 
         private void ExecuteAddPatient(object param)
         {
-            _hospitalRegistryService.AddPatient(new Patient());
+            Patient patient = new Patient()
+            {
+                FirstName = "Empty",
+                LastName = "Patient",
+                DateOfBirth = new DateTime(2000, 1, 1),
+                Gender = Gender.Male,
+                Adress = new Adress()
+            };
+
+            _hospitalRegistryService.AddPatient(patient);
+            OnPropertyChanged("PatientsList");
+        }
+
+        private int _patientsListSelectedIndex;
+        public int PatientsListBoxSelectedIndex {
+            get => _patientsListSelectedIndex;
+            set
+            {
+                _patientsListSelectedIndex = value;
+                RemovePatientCommand.RaiseCanExecuteChanged();
+            }
+        }
+
+        public bool CanExecuteRemovePatient(object param)
+        {
+            return PatientsListBoxSelectedIndex != -1;
+        }
+
+        public void ExecuteRemovePatient(object param)
+        {
+            _hospitalRegistryService.RemovePatient(PatientsListBoxSelectedIndex);
+            RemovePatientCommand.RaiseCanExecuteChanged();
+            OnPropertyChanged("PatientsList");
         }
     }
 }
