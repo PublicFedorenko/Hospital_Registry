@@ -29,11 +29,13 @@ namespace BusinessLogicLayer.Entities.Entities
             get => _mobileNumber;
             set
             {
-                Regex mobileNumberPattern = new Regex(@"(?x)(+38\d{10} | 38\d{10} | \d{10})");
-                if (mobileNumberPattern.IsMatch(value))
-                    _mobileNumber = value;
-                else
-                    throw new ArgumentException("Invalid mobile number.");
+                //Regex mobileNumberPattern = new Regex(@"(?x)(\+38\d{10} | 38\d{10} | \d{10})");
+                //if (mobileNumberPattern.IsMatch(value))
+                //    _mobileNumber = value;
+                //else
+                //    throw new ArgumentException("Invalid mobile number.");
+
+                _mobileNumber = value;
             }
         }
         public string HomeNumber
@@ -41,11 +43,13 @@ namespace BusinessLogicLayer.Entities.Entities
             get => _homeNumber;
             set
             {
-                Regex homeNumberPattern = new Regex(@"(?x)(044\d{7} | \d{7} | +38044\d{7} | +38(044)\d{7})");
-                if (homeNumberPattern.IsMatch(value))
-                    _homeNumber = value;
-                else
-                    throw new ArgumentException("Invalid home number.");
+                //Regex homeNumberPattern = new Regex(@"(?x)(044\d{7} | \d{7} | +38044\d{7} | +38(044)\d{7})");
+                //if (homeNumberPattern.IsMatch(value))
+                //    _homeNumber = value;
+                //else
+                //    throw new ArgumentException("Invalid home number.");
+
+                _homeNumber = value;
             }
         }
         public string Email
@@ -53,11 +57,13 @@ namespace BusinessLogicLayer.Entities.Entities
             get => _email;
             set
             {
-                Regex emailPattern = new Regex(@".+@\w+\.\w+");
-                if (emailPattern.IsMatch(value))
-                    _email = value;
-                else
-                    throw new ArgumentException("Invalid email.");
+                //Regex emailPattern = new Regex(@".+@\w+\.\w+");
+                //if (emailPattern.IsMatch(value))
+                //    _email = value;
+                //else
+                //    throw new ArgumentException("Invalid email.");
+
+                _email = value;
             }
         }
         #endregion
