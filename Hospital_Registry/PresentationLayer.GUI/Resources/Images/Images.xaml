@@ -28,4 +28,9 @@
     <BitmapImage x:Key="CalendarIcon" UriSource="Calendar.png" />
     <BitmapImage x:Key="AddUserIcon" UriSource="AddUser.png" />
     <BitmapImage x:Key="RemoveUserIcon" UriSource="RemoveUser.png" />
+    <BitmapImage x:Key="DoctorIcon" UriSource="Doctor.png" />
+    <BitmapImage x:Key="Doctor2Icon" UriSource="Doctor2.png" />
+    <BitmapImage x:Key="PatientIcon" UriSource="Patient.png" />
+    <BitmapImage x:Key="RoadIcon" UriSource="Road.png" />
+    <BitmapImage x:Key="Road1Icon" UriSource="Road1.png" />
 </ResourceDictionary>

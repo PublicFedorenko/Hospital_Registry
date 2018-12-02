@@ -82,7 +82,30 @@
                                 HorizontalAlignment="Stretch"
                                 VerticalAlignment="Stretch"
                                 ItemsSource="{Binding PatientsList}"
-                                SelectedIndex="{Binding PatientsListBoxSelectedIndex, UpdateSourceTrigger=PropertyChanged}" />
+                                SelectedIndex="{Binding PatientsListBoxSelectedIndex, UpdateSourceTrigger=PropertyChanged}">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image
+                                                Width="{Binding Path=Height, RelativeSource={RelativeSource Self}}"
+                                                Height="25"
+                                                Source="{StaticResource PatientIcon}"
+                                                Style="{StaticResource LittleIconStyle}" />
+                                            <StackPanel Orientation="Vertical">
+                                                <TextBlock Text="{Binding FullName}" />
+                                                <TextBlock>
+                                                    <TextBlock.Text>
+                                                        <MultiBinding StringFormat="{}{0} years, {1:M.d.yyyy}">
+                                                            <Binding Path="Age" />
+                                                            <Binding Path="DateOfBirth" />
+                                                        </MultiBinding>
+                                                    </TextBlock.Text>
+                                                </TextBlock>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
                         </ScrollViewer>
                         <TextBox
                             Grid.Row="0"
@@ -181,7 +204,7 @@
                                     FontFamily="{StaticResource MainFontFamily}"
                                     FontSize="17"
                                     Style="{StaticResource CopybleReadOnlyTextBoxStyle}"
-                                    Text="Bogdan Fedorenko" />
+                                    Text="{Binding ElementName=ListBox_Patients, Mode=OneWay, Path=SelectedItem.FullName}" />
                                 <Label Width="10" />
                                 <Button
                                     Width="{Binding Path=Height, RelativeSource={RelativeSource Self}}"
@@ -239,7 +262,7 @@
                                                 VerticalContentAlignment="Bottom"
                                                 Foreground="{StaticResource SecondaryTextBrush}"
                                                 Style="{StaticResource CopybleReadOnlyTextBoxStyle}"
-                                                Text="7588-5142-5214-8743" />
+                                                Text="{Binding ElementName=ListBox_Patients, Mode=OneWay, Path=SelectedItem.Id}" />
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal">
                                             <Image
@@ -251,8 +274,17 @@
                                                 Height="20"
                                                 VerticalContentAlignment="Bottom"
                                                 Foreground="{StaticResource SecondaryTextBrush}"
-                                                Style="{StaticResource CopybleReadOnlyTextBoxStyle}"
-                                                Text="27 years old, 17.01.1990" />
+                                                Style="{StaticResource CopybleReadOnlyTextBoxStyle}">
+                                                <TextBox.Text>
+                                                    <MultiBinding StringFormat="{}{0} years, {1:M.d.yyyy}">
+                                                        <Binding
+                                                            ElementName="ListBox_Patients"
+                                                            Mode="OneWay"
+                                                            Path="SelectedItem.Age" />
+                                                        <Binding ElementName="ListBox_Patients" Path="SelectedItem.DateOfBirth" />
+                                                    </MultiBinding>
+                                                </TextBox.Text>
+                                            </TextBox>
                                         </StackPanel>
 
 
@@ -267,7 +299,7 @@
                                                 VerticalContentAlignment="Bottom"
                                                 Foreground="{StaticResource SecondaryTextBrush}"
                                                 Style="{StaticResource CopybleReadOnlyTextBoxStyle}"
-                                                Text="270-04-29" />
+                                                Text="{Binding ElementName=ListBox_Patients, Path=SelectedItem.HomeNumber}" />
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal">
                                             <Image
@@ -280,7 +312,7 @@
                                                 VerticalContentAlignment="Bottom"
                                                 Foreground="{StaticResource SecondaryTextBrush}"
                                                 Style="{StaticResource CopybleReadOnlyTextBoxStyle}"
-                                                Text="0636429376" />
+                                                Text="{Binding ElementName=ListBox_Patients, Path=SelectedItem.MobileNumber}" />
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal">
                                             <Image
@@ -293,7 +325,7 @@
                                                 VerticalContentAlignment="Bottom"
                                                 Foreground="{StaticResource SecondaryTextBrush}"
                                                 Style="{StaticResource CopybleReadOnlyTextBoxStyle}"
-                                                Text="bogdan.fedorenko.stydy@gmail.com" />
+                                                Text="{Binding ElementName=ListBox_Patients, Path=SelectedItem.Email}" />
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal">
                                             <Image
@@ -305,8 +337,14 @@
                                                 Height="20"
                                                 VerticalContentAlignment="Bottom"
                                                 Foreground="{StaticResource SecondaryTextBrush}"
-                                                Style="{StaticResource CopybleReadOnlyTextBoxStyle}"
-                                                Text="Kyiv, Volynska St, 16" />
+                                                Style="{StaticResource CopybleReadOnlyTextBoxStyle}">
+                                                <TextBox.Text>
+                                                    <MultiBinding StringFormat="{}{0}, {1}">
+                                                        <Binding ElementName="ListBox_Patients" Path="SelectedItem.Adress.City" />
+                                                        <Binding ElementName="ListBox_Patients" Path="SelectedItem.Adress.Street" />
+                                                    </MultiBinding>
+                                                </TextBox.Text>
+                                            </TextBox>
                                             <Image
                                                 Width="28"
                                                 Height="{Binding ElementName=TextBox_PatientsAdress, Path=Height}"
@@ -317,7 +355,7 @@
                                                 VerticalContentAlignment="Bottom"
                                                 Foreground="{StaticResource SecondaryTextBrush}"
                                                 Style="{StaticResource CopybleReadOnlyTextBoxStyle}"
-                                                Text="35" />
+                                                Text="{Binding ElementName=ListBox_Patients, Path=SelectedItem.Adress.Building}" />
                                         </StackPanel>
                                     </StackPanel>
                                 </Grid>
