@@ -14,20 +14,19 @@ namespace BusinessLogicLayer.Services
 {
     public class HospitalRegistryService : INotifyPropertyChanged
     {
-        public ReadOnlyObservableCollection<Patient> Patients
+        public ObservableCollection<Patient> Patients
         {
             get
             {
-                ReadOnlyObservableCollection<Patient> patients;
+                ObservableCollection<Patient> patients;
                 using (UnitOfWork unitOfWork = new UnitOfWork(new HospitalRegistryContext()))
                 {
-                    patients = new ReadOnlyObservableCollection<Patient>
-                        (new ObservableCollection<Patient>(unitOfWork.Patients.GetAll().ToList()));
+                    patients = new ObservableCollection<Patient>(unitOfWork.Patients.GetAll().ToList());
                 }
                 return patients;
             }
         }
-        public ReadOnlyObservableCollection<Doctor> Doctors;
+        public ObservableCollection<Doctor> Doctors;
 
         public HospitalRegistryService()
         {

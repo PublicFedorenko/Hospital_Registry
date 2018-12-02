@@ -40,7 +40,7 @@ namespace PresentationLayer.GUI.ViewModels
             CompleteEditPatientCommand = new DelegateCommand(ExecuteComleteEditPatient, CanExecuteComleteEditPatient);
         }
 
-        public ReadOnlyObservableCollection<Patient> PatientsList
+        public ObservableCollection<Patient> PatientsList
         {
             get => _hospitalRegistryService.Patients;
         }

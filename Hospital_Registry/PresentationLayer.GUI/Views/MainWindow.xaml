@@ -92,7 +92,10 @@
                                                 Source="{StaticResource PatientIcon}"
                                                 Style="{StaticResource LittleIconStyle}" />
                                             <StackPanel Orientation="Vertical">
-                                                <TextBlock Text="{Binding FullName}" />
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock Text="{Binding FirstName}" />
+                                                    <TextBlock Text="{Binding LastName}" />
+                                                </StackPanel>
                                                 <TextBlock>
                                                     <TextBlock.Text>
                                                         <MultiBinding StringFormat="{}{0} years, {1:M.d.yyyy}">
@@ -221,7 +224,7 @@
                                     FontFamily="{StaticResource MainFontFamily}"
                                     FontSize="17"
                                     Style="{StaticResource PatientPropertiesStyle}"
-                                    Text="{Binding ElementName=ListBox_Patients, Mode=TwoWay, Path=SelectedItem.LastName}" />
+                                    Text="{Binding ElementName=ListBox_Patients, Path=SelectedItem.LastName}" />
                                 <Label Width="10" />
                                 <Button
                                     Width="{Binding Path=Height, RelativeSource={RelativeSource Self}}"
@@ -279,7 +282,7 @@
                                                 VerticalContentAlignment="Bottom"
                                                 Foreground="{StaticResource SecondaryTextBrush}"
                                                 Style="{StaticResource PatientPropertiesStyle}"
-                                                Text="{Binding ElementName=ListBox_Patients, Mode=OneWay, Path=SelectedItem.Id}" />
+                                                Text="{Binding ElementName=ListBox_Patients, Path=SelectedItem.Id}" />
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal">
                                             <Image
@@ -291,8 +294,9 @@
                                                 Height="20"
                                                 VerticalContentAlignment="Bottom"
                                                 Foreground="{StaticResource SecondaryTextBrush}"
-                                                Style="{StaticResource PatientPropertiesStyle}">
-                                                <TextBox.Text>
+                                                Style="{StaticResource PatientPropertiesStyle}"
+                                                Text="{Binding ElementName=ListBox_Patients, Mode=OneWay, Path=SelectedItem.Age}">
+                                                <!--<TextBox.Text>
                                                     <MultiBinding StringFormat="{}{0} years, {1:M.d.yyyy}">
                                                         <Binding
                                                             ElementName="ListBox_Patients"
@@ -300,8 +304,14 @@
                                                             Path="SelectedItem.Age" />
                                                         <Binding ElementName="ListBox_Patients" Path="SelectedItem.DateOfBirth" />
                                                     </MultiBinding>
-                                                </TextBox.Text>
+                                                </TextBox.Text>-->
                                             </TextBox>
+                                            <TextBox
+                                                Height="20"
+                                                VerticalContentAlignment="Bottom"
+                                                Foreground="{StaticResource SecondaryTextBrush}"
+                                                Style="{StaticResource PatientPropertiesStyle}"
+                                                Text="{Binding ElementName=ListBox_Patients, Path=SelectedItem.DateOfBirth, StringFormat={}M.d.yyyy}" />
                                         </StackPanel>
 
 

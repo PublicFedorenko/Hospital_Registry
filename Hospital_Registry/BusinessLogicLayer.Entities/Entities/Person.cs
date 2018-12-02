@@ -13,7 +13,6 @@ namespace BusinessLogicLayer.Entities.Entities
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string FullName { get => FirstName + " " + LastName; }
         public DateTime DateOfBirth { get; set; }
         public int Age { get => DateTime.Today.Year - DateOfBirth.Year; }
         public Gender Gender { get; set; }
