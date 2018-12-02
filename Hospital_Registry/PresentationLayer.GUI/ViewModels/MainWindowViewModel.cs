@@ -19,6 +19,8 @@ namespace PresentationLayer.GUI.ViewModels
         #region Commands
         public IDelegateCommand AddPatientCommand { get; protected set; }
         public IDelegateCommand RemovePatientCommand { get; protected set; }
+        public IDelegateCommand EditPatientCommand { get; protected set; }
+        public IDelegateCommand CompleteEditPatientCommand { get; protected set; }
         #endregion
 
         #region INotifyPropertyChanged
@@ -34,6 +36,8 @@ namespace PresentationLayer.GUI.ViewModels
         {
             AddPatientCommand = new DelegateCommand(ExecuteAddPatient);
             RemovePatientCommand = new DelegateCommand(ExecuteRemovePatient, CanExecuteRemovePatient);
+            EditPatientCommand = new DelegateCommand(ExecuteEditPatient, CanExecuteEditPatient);
+            CompleteEditPatientCommand = new DelegateCommand(ExecuteComleteEditPatient, CanExecuteComleteEditPatient);
         }
 
         public ReadOnlyObservableCollection<Patient> PatientsList
@@ -76,6 +80,41 @@ namespace PresentationLayer.GUI.ViewModels
             _hospitalRegistryService.RemovePatient(PatientsListBoxSelectedIndex);
             RemovePatientCommand.RaiseCanExecuteChanged();
             OnPropertyChanged("PatientsList");
+        }
+
+        private bool _isPatientReadonly = true;
+        public bool IsPatientReadOnly
+        {
+            get => _isPatientReadonly;
+            set
+            {
+                _isPatientReadonly = value;
+                EditPatientCommand.RaiseCanExecuteChanged();
+            }
+        }
+
+        public bool CanExecuteEditPatient(object param)
+        {
+            return PatientsListBoxSelectedIndex != -1;
+        }
+
+        public void ExecuteEditPatient(object param)
+        {
+            IsPatientReadOnly = false;
+            OnPropertyChanged("IsPatientReadOnly");
+        }
+
+
+
+        public bool CanExecuteComleteEditPatient(object param)
+        {
+            return PatientsListBoxSelectedIndex != -1;
+        }
+
+        public void ExecuteComleteEditPatient(object param)
+        {
+            IsPatientReadOnly = true;
+            OnPropertyChanged("IsPatientReadOnly");
         }
     }
 }

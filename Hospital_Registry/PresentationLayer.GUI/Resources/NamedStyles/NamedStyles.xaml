@@ -7,5 +7,7 @@
         <ResourceDictionary Source="CopybleReadOnlyTextBoxStyle.xaml" />
         <ResourceDictionary Source="LittleIconStyle.xaml" />
         <ResourceDictionary Source="TabItemStyle.xaml" />
+        <ResourceDictionary Source="PatientPropertiesStyle.xaml" />
+        <ResourceDictionary Source="EditButtonStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
