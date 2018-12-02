@@ -50,6 +50,7 @@ namespace DataAccessLayer.Persistance.Repositories
 
         public void Remove(TEntity entity)
         {
+            Context.Set<TEntity>().Attach(entity);
             Context.Set<TEntity>().Remove(entity);
         }
 
