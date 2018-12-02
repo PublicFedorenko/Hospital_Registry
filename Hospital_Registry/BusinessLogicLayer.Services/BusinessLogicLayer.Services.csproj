@@ -31,6 +31,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\PresentationLayer.GUI\bin\Debug\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\DataAccessLayer.Persistance\bin\Debug\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,12 +48,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="HospitalRegistryService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BusinessLogicLayer.Entities\BusinessLogicLayer.Entities.csproj">
+      <Project>{FF06E1EA-D02D-41A7-942A-DCB5D64D6BB2}</Project>
+      <Name>BusinessLogicLayer.Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataAccessLayer.Persistance\DataAccessLayer.Persistance.csproj">
-      <Project>{B897E36C-B1B1-48FD-A180-AA930DF5D548}</Project>
+      <Project>{A7B17C28-D4BD-4364-9509-E0E246575D0B}</Project>
       <Name>DataAccessLayer.Persistance</Name>
     </ProjectReference>
   </ItemGroup>
