@@ -15,6 +15,7 @@ namespace BusinessLogicLayer.Entities.Entities
         public string LastName { get; set; }
         public string FullName { get => FirstName + " " + LastName; }
         public DateTime DateOfBirth { get; set; }
+        public int Age { get => DateTime.Today.Year - DateOfBirth.Year; }
         public Gender Gender { get; set; }
         public Person() { }
         public Person(string firstName, string lastName, DateTime dateOfBirth, Gender gender)
