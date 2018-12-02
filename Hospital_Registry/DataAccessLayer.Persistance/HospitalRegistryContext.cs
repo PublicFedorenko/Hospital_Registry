@@ -10,7 +10,7 @@ namespace DataAccessLayer.Persistance
 {
     public class HospitalRegistryContext : DbContext
     {
-        public DbSet<Patient> Patients { get; }
-        public DbSet<Doctor> Doctors { get; }
+        public DbSet<Patient> Patients { get; set; }
+        public DbSet<Doctor> Doctors { get; set; }
     }
 }
