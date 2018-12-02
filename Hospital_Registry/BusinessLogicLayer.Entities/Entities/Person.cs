@@ -13,6 +13,7 @@ namespace BusinessLogicLayer.Entities.Entities
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string FullName { get => FirstName + " " + LastName; }
         public DateTime DateOfBirth { get; set; }
         public Gender Gender { get; set; }
         public Person() { }
