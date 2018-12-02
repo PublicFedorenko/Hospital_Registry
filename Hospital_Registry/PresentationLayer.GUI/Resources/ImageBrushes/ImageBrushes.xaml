@@ -7,5 +7,6 @@
         <ResourceDictionary Source="EditImageBrush.xaml" />
         <ResourceDictionary Source="AddUserImageBrush.xaml" />
         <ResourceDictionary Source="RemoveUserImageBrush.xaml" />
+        <ResourceDictionary Source="CheckSymbolImageBrush.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
