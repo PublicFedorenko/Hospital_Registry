@@ -5,12 +5,17 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:PresentationLayer.GUI"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:PresentationLayer.GUI.ViewModels"
     Title="MainWindow"
     Width="1016.8"
     Height="591.422"
     MinWidth="600"
     MinHeight="400"
     mc:Ignorable="d">
+
+    <Window.DataContext>
+        <vm:MainWindowViewModel />
+    </Window.DataContext>
 
     <Grid>
         <TabControl
@@ -72,7 +77,12 @@
                             Grid.Row="6"
                             Grid.Column="1"
                             Grid.ColumnSpan="3">
-                            <ListBox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                            <ListBox
+                                x:Name="ListBox_Patients"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch"
+                                ItemsSource="{Binding PatientsList}"
+                                SelectedIndex="{Binding PatientsListBoxSelectedIndex, UpdateSourceTrigger=PropertyChanged}" />
                         </ScrollViewer>
                         <TextBox
                             Grid.Row="0"
@@ -86,12 +96,15 @@
                             Width="{Binding Path=Height, RelativeSource={RelativeSource Self}}"
                             Height="25"
                             Background="{StaticResource AddUserImageBrush}"
+                            Command="{Binding AddPatientCommand}"
                             Style="{StaticResource BorderlessServiceButtonStyle}" />
                         <Button
                             Grid.Column="3"
                             Width="{Binding Path=Height, RelativeSource={RelativeSource Self}}"
                             Height="25"
                             Background="{StaticResource RemoveUserImageBrush}"
+                            Command="{Binding RemovePatientCommand}"
+                            CommandParameter="{Binding ElementName=ListBox_Patients, Path=SelectedIndex}"
                             Style="{StaticResource BorderlessServiceButtonStyle}" />
                         <Button
                             Grid.Row="2"
