@@ -4,6 +4,7 @@
     xmlns:local="clr-namespace:PresentationLayer.GUI.Resources.Images">
     <BitmapImage x:Key="MaleIcon" UriSource="Male.png" />
     <BitmapImage x:Key="FemaleIcon" UriSource="Female.png" />
+    <BitmapImage x:Key="Female1Icon" UriSource="Female1.png" />
     <BitmapImage x:Key="ArrobaIcon" UriSource="Arroba.png" />
     <BitmapImage x:Key="PatientPhotoIcon" UriSource="PatientPhoto.png" />
     <BitmapImage x:Key="PlaceholderIcon" UriSource="Placeholder.png" />
@@ -33,4 +34,5 @@
     <BitmapImage x:Key="PatientIcon" UriSource="Patient.png" />
     <BitmapImage x:Key="RoadIcon" UriSource="Road.png" />
     <BitmapImage x:Key="Road1Icon" UriSource="Road1.png" />
+    <BitmapImage x:Key="CheckSymbolIcon" UriSource="CheckSymbol.png" />
 </ResourceDictionary>
