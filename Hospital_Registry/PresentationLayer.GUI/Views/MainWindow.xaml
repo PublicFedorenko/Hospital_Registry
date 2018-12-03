@@ -69,8 +69,10 @@
 
 
                         <TextBox
+                            x:Name="TextBox_PatientsSearchBar"
                             Grid.Row="2"
                             Grid.Column="1"
+                            VerticalContentAlignment="Center"
                             FontSize="14"
                             TextWrapping="Wrap" />
                         <ScrollViewer
@@ -96,14 +98,11 @@
                                                     <TextBlock Text="{Binding FirstName}" />
                                                     <TextBlock Text="{Binding LastName}" />
                                                 </StackPanel>
-                                                <TextBlock>
-                                                    <TextBlock.Text>
-                                                        <MultiBinding StringFormat="{}{0} years, {1:M.d.yyyy}">
-                                                            <Binding Path="Age" />
-                                                            <Binding Path="DateOfBirth" />
-                                                        </MultiBinding>
-                                                    </TextBlock.Text>
-                                                </TextBlock>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock Text="{Binding Age}" />
+                                                    <TextBlock Text=" years, " />
+                                                    <TextBlock Text="{Binding DateOfBirth, StringFormat={}M.d.yyyy}" />
+                                                </StackPanel>
                                             </StackPanel>
                                         </StackPanel>
                                     </DataTemplate>
@@ -137,6 +136,8 @@
                             Grid.Column="2"
                             Grid.ColumnSpan="2"
                             Background="White"
+                            Command="{Binding FindPatients}"
+                            CommandParameter="{Binding ElementName=TextBox_PatientsSearchBar, Path=Text}"
                             Content="Search"
                             FontSize="14" />
                         <TextBox
@@ -238,6 +239,7 @@
                                         Width="{Binding Path=Height, RelativeSource={RelativeSource Self}}"
                                         Height="16"
                                         Background="{StaticResource RefreshImageBrush}"
+                                        Command="{Binding RefreshPatient}"
                                         Style="{StaticResource BorderlessServiceButtonStyle}" />
 
                                 </StackPanel>
@@ -280,8 +282,10 @@
                                                 x:Name="TextBox_PatientsId"
                                                 Height="20"
                                                 VerticalContentAlignment="Bottom"
+                                                Background="Transparent"
+                                                BorderBrush="{x:Null}"
+                                                BorderThickness="0"
                                                 Foreground="{StaticResource SecondaryTextBrush}"
-                                                Style="{StaticResource PatientPropertiesStyle}"
                                                 Text="{Binding ElementName=ListBox_Patients, Path=SelectedItem.Id}" />
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal">
@@ -293,19 +297,11 @@
                                                 x:Name="TextBox_PatientAge"
                                                 Height="20"
                                                 VerticalContentAlignment="Bottom"
+                                                Background="Transparent"
+                                                BorderBrush="{x:Null}"
+                                                BorderThickness="0"
                                                 Foreground="{StaticResource SecondaryTextBrush}"
-                                                Style="{StaticResource PatientPropertiesStyle}"
-                                                Text="{Binding ElementName=ListBox_Patients, Mode=OneWay, Path=SelectedItem.Age}">
-                                                <!--<TextBox.Text>
-                                                    <MultiBinding StringFormat="{}{0} years, {1:M.d.yyyy}">
-                                                        <Binding
-                                                            ElementName="ListBox_Patients"
-                                                            Mode="OneWay"
-                                                            Path="SelectedItem.Age" />
-                                                        <Binding ElementName="ListBox_Patients" Path="SelectedItem.DateOfBirth" />
-                                                    </MultiBinding>
-                                                </TextBox.Text>-->
-                                            </TextBox>
+                                                Text="{Binding ElementName=ListBox_Patients, Mode=OneWay, Path=SelectedItem.Age, UpdateSourceTrigger=PropertyChanged}" />
                                             <TextBox
                                                 Height="20"
                                                 VerticalContentAlignment="Bottom"
