@@ -14,7 +14,7 @@
             </Trigger>
             <Trigger Property="IsReadOnly" Value="False">
                 <Setter Property="BorderThickness" Value="1" />
-                <Setter Property="BorderBrush" Value="Black" />
+                <Setter Property="BorderBrush" Value="#FF868686" />
             </Trigger>
         </Style.Triggers>
     </Style>

@@ -63,6 +63,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Resources\Brushes\MainMenuBrush.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\Brushes\SecondaryTextBrush.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -176,9 +180,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Images\PatientPhoto.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\Images\Arroba.png" />
     <Resource Include="Resources\Images\Placeholder.png" />
     <Resource Include="Resources\Images\Smartphone.png" />
@@ -205,9 +206,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\PatientPhoto2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Images\PatientPhoto1.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\MonoRefresh.png" />
@@ -259,9 +257,6 @@
     <Resource Include="Resources\Images\Doctor2.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Images\Patient.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\Images\Road.png" />
   </ItemGroup>
   <ItemGroup>
@@ -272,6 +267,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\CheckSymbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Patient.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Patient1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

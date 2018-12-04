@@ -6,5 +6,9 @@
     <Style x:Key="TabItemStyle" TargetType="{x:Type TabItem}">
         <Setter Property="Height" Value="100" />
         <Setter Property="Width" Value="100" />
+        <!--<Setter Property="Background" Value="{StaticResource MainMenuBrush}" />-->
+        <!--<Setter Property="Background" Value="#FF323232" />-->
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="BorderBrush" Value="Transparent" />
     </Style>
 </ResourceDictionary>

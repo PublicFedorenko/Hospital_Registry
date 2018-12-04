@@ -23,11 +23,14 @@
             VerticalAlignment="Stretch"
             HorizontalContentAlignment="Center"
             VerticalContentAlignment="Bottom"
+            Background="Transparent"
+            BorderBrush="Transparent"
+            BorderThickness="0"
             TabStripPlacement="Left">
-            <TabItem Header="" Style="{StaticResource TabItemStyle}">
+            <TabItem Style="{StaticResource TabItemStyle}">
                 <Grid Background="White" />
             </TabItem>
-            <TabItem Header="Пацієнти" Style="{StaticResource TabItemStyle}">
+            <TabItem Header="Patients" Style="{StaticResource TabItemStyle}">
                 <Grid Background="White">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="10" />
@@ -95,13 +98,13 @@
                                                 Style="{StaticResource LittleIconStyle}" />
                                             <StackPanel Orientation="Vertical">
                                                 <StackPanel Orientation="Horizontal">
-                                                    <TextBlock Text="{Binding FirstName}" />
-                                                    <TextBlock Text="{Binding LastName}" />
+                                                    <TextBlock Foreground="{StaticResource SecondaryTextBrush}" Text="{Binding FirstName}" />
+                                                    <TextBlock Foreground="{StaticResource SecondaryTextBrush}" Text="{Binding LastName}" />
                                                 </StackPanel>
                                                 <StackPanel Orientation="Horizontal">
-                                                    <TextBlock Text="{Binding Age}" />
-                                                    <TextBlock Text=" years, " />
-                                                    <TextBlock Text="{Binding DateOfBirth, StringFormat={}M.d.yyyy}" />
+                                                    <TextBlock Foreground="{StaticResource SecondaryTextBrush}" Text="{Binding Age}" />
+                                                    <TextBlock Foreground="{StaticResource SecondaryTextBrush}" Text=" years, " />
+                                                    <TextBlock Foreground="{StaticResource SecondaryTextBrush}" Text="{Binding DateOfBirth, StringFormat={}M.d.yyyy}" />
                                                 </StackPanel>
                                             </StackPanel>
                                         </StackPanel>
@@ -192,11 +195,43 @@
                                 FontFamily="{StaticResource MainFontFamily}"
                                 FontSize="20"
                                 Style="{StaticResource CopybleReadOnlyTextBoxStyle}"
-                                Text="Patients card" />
+                                Text="Patient card" />
                             <StackPanel
                                 Grid.Row="2"
                                 Grid.Column="1"
                                 Orientation="Horizontal">
+                                <StackPanel.Style>
+                                    <Style TargetType="{x:Type StackPanel}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding IsPatientSelected}" Value="True">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding IsPatientSelected}" Value="False">
+                                                <Setter Property="Visibility" Value="Collapsed" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </StackPanel.Style>
+                                <ComboBox SelectedIndex="{Binding ElementName=ListBox_Patients, Path=SelectedItem.Gender}">
+                                    <ComboBoxItem>
+                                        <Image Width="16" Source="{StaticResource MonoMaleIcon}" />
+                                    </ComboBoxItem>
+                                    <ComboBoxItem>
+                                        <Image Width="18" Source="{StaticResource Female1Icon}" />
+                                    </ComboBoxItem>
+                                    <ComboBox.Style>
+                                        <Style TargetType="{x:Type ComboBox}">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding IsPatientReadOnly}" Value="True">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding IsPatientReadOnly}" Value="False">
+                                                    <Setter Property="Visibility" Value="Visible" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </ComboBox.Style>
+                                </ComboBox>
                                 <Image Width="16" RenderOptions.BitmapScalingMode="Fant">
                                     <Image.Style>
                                         <Style TargetType="{x:Type Image}">
@@ -206,6 +241,12 @@
                                                 </DataTrigger>
                                                 <DataTrigger Binding="{Binding ElementName=ListBox_Patients, Path=SelectedItem.Gender}" Value="Female">
                                                     <Setter Property="Source" Value="{StaticResource Female1Icon}" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding IsPatientReadOnly}" Value="False">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding IsPatientReadOnly}" Value="True">
+                                                    <Setter Property="Visibility" Value="Visible" />
                                                 </DataTrigger>
                                             </Style.Triggers>
                                         </Style>
@@ -239,8 +280,20 @@
                                         Width="{Binding Path=Height, RelativeSource={RelativeSource Self}}"
                                         Height="16"
                                         Background="{StaticResource RefreshImageBrush}"
-                                        Command="{Binding RefreshPatient}"
-                                        Style="{StaticResource BorderlessServiceButtonStyle}" />
+                                        Command="{Binding RefreshPatient}">
+                                        <Button.Style>
+                                            <Style BasedOn="{StaticResource BorderlessServiceButtonStyle}" TargetType="{x:Type Button}">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding IsPatientSelected}" Value="True">
+                                                        <Setter Property="Visibility" Value="Visible" />
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding IsPatientSelected}" Value="False">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+                                    </Button>
 
                                 </StackPanel>
                             </Grid>
@@ -269,7 +322,20 @@
                                     </Grid.ColumnDefinitions>
 
                                     <Border BorderBrush="Gray" BorderThickness="0">
-                                        <Image RenderOptions.BitmapScalingMode="Fant" Source="{StaticResource PatientPhoto2Icon}" />
+                                        <Image RenderOptions.BitmapScalingMode="Fant" Source="{StaticResource PatientPhoto2Icon}">
+                                            <Image.Style>
+                                                <Style TargetType="{x:Type Image}">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding IsPatientSelected}" Value="True">
+                                                            <Setter Property="Visibility" Value="Visible" />
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding IsPatientSelected}" Value="False">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Image.Style>
+                                        </Image>
                                     </Border>
 
                                     <StackPanel Grid.Row="0" Grid.Column="2">
@@ -399,17 +465,58 @@
                                     <TextBox
                                         VerticalContentAlignment="Bottom"
                                         FontSize="17"
-                                        Style="{StaticResource CopybleReadOnlyTextBoxStyle}"
-                                        Text="Doctor appointments" />
+                                        Text="Doctor appointments">
+                                        <TextBox.Style>
+                                            <Style TargetType="{x:Type TextBox}">
+                                                <Setter Property="Background" Value="Transparent" />
+                                                <Setter Property="BorderBrush" Value="{x:Null}" />
+                                                <Setter Property="BorderThickness" Value="0" />
+                                                <Setter Property="IsReadOnly" Value="True" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding IsPatientSelected}" Value="True">
+                                                        <Setter Property="Visibility" Value="Visible" />
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding IsPatientSelected}" Value="False">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBox.Style>
+                                    </TextBox>
                                     <ScrollViewer Grid.Row="2">
+                                        <ScrollViewer.Style>
+                                            <Style TargetType="{x:Type ScrollViewer}">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding IsPatientSelected}" Value="True">
+                                                        <Setter Property="Visibility" Value="Visible" />
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding IsPatientSelected}" Value="False">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </ScrollViewer.Style>
+
                                         <ListBox />
                                     </ScrollViewer>
                                     <StackPanel Grid.Row="4" Orientation="Horizontal">
                                         <Button
                                             Content="+ Add appointment"
                                             FontFamily="{StaticResource MainFontFamily}"
-                                            Foreground="{StaticResource ServiceButtonsTextBrush}"
-                                            Style="{StaticResource BorderlessServiceButtonStyle}" />
+                                            Foreground="{StaticResource ServiceButtonsTextBrush}">
+                                            <Button.Style>
+                                                <Style BasedOn="{StaticResource BorderlessServiceButtonStyle}" TargetType="{x:Type Button}">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding IsPatientSelected}" Value="True">
+                                                            <Setter Property="Visibility" Value="Visible" />
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding IsPatientSelected}" Value="False">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Button.Style>
+                                        </Button>
                                     </StackPanel>
 
                                 </Grid>
@@ -418,10 +525,10 @@
                     </ScrollViewer>
                 </Grid>
             </TabItem>
-            <TabItem Header="Лікарі" Style="{StaticResource TabItemStyle}">
+            <TabItem Header="Doctors" Style="{StaticResource TabItemStyle}">
                 <Grid Background="White" />
             </TabItem>
-            <TabItem Header="Розклад" Style="{StaticResource TabItemStyle}">
+            <TabItem Header="Shedule" Style="{StaticResource TabItemStyle}">
                 <Grid Background="White" />
             </TabItem>
             <ListBox Width="100" Height="100" />

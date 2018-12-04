@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{A10C7DA8-26D5-4395-9FAF-7D77CF2E8060}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PresentationLayer", "PresentationLayer", "{BFFE2564-8CDD-42D2-9925-D3E110EFA692}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Users\Bogdan\Desktop\Images for Coursework\user (5).png = ..\..\..\Users\Bogdan\Desktop\Images for Coursework\user (5).png
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessLogicLayer", "BusinessLogicLayer", "{87A6C012-63FA-4C4E-B0CC-C10C3784C982}"
 EndProject

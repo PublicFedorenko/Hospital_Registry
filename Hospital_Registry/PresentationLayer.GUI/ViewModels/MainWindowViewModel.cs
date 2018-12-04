@@ -39,7 +39,6 @@ namespace PresentationLayer.GUI.ViewModels
         public MainWindowViewModel()
         {
             _defaultPatientsFilePath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\Patients.xml"));
-            //_patients = new ObservableCollection<Patient>();
             _patients = Load<Patient>(_defaultPatientsFilePath);
 
             #region InitializeCommands
@@ -65,7 +64,6 @@ namespace PresentationLayer.GUI.ViewModels
         }
 
         #region UtilityProperties
-
         private int _patientsListSelectedIndex;
         public int PatientsListBoxSelectedIndex
         {
@@ -74,6 +72,7 @@ namespace PresentationLayer.GUI.ViewModels
             {
                 _patientsListSelectedIndex = value;
                 RemovePatientCommand.RaiseCanExecuteChanged();
+                OnPropertyChanged("IsPatientSelected");
             }
         }
 
@@ -88,6 +87,10 @@ namespace PresentationLayer.GUI.ViewModels
             }
         }
 
+        public bool IsPatientSelected
+        {
+            get => PatientsListBoxSelectedIndex != -1;
+        }
         #endregion
 
         private void Save<TEntity>(ObservableCollection<TEntity> entities, string filePath)
