@@ -16,6 +16,7 @@ namespace PresentationLayer.GUI.ViewModels
     public class MainWindowViewModel : INotifyPropertyChanged
     {
         private ObservableCollection<Patient> _patients;
+        private ObservableCollection<Visit> _patientAppointments;
         private readonly string _defaultPatientsFilePath;
 
         #region Commands
@@ -25,6 +26,8 @@ namespace PresentationLayer.GUI.ViewModels
         public IDelegateCommand CompleteEditPatientCommand { get; protected set; }
         public IDelegateCommand RefreshPatient { get; protected set; }
         public IDelegateCommand FindPatients { get; protected set; }
+        public IDelegateCommand AddAppointment { get; protected set; }
+        public IDelegateCommand RemoveAppointment { get; protected set; }
         #endregion
 
         #region INotifyPropertyChanged
@@ -48,6 +51,8 @@ namespace PresentationLayer.GUI.ViewModels
             CompleteEditPatientCommand = new DelegateCommand(ExecuteComleteEditPatient, CanExecuteComleteEditPatient);
             RefreshPatient = new DelegateCommand(ExecuteRefreshPatient, CanExecuteRefreshPatient);
             FindPatients = new DelegateCommand(ExecuteFindPatients, CanExecuteFindPatients);
+            AddAppointment = new DelegateCommand(ExecuteAddAppointment);
+            RemoveAppointment = new DelegateCommand(ExecuteRemoveAppointment, CanExecuteRemoveAppointment);
             #endregion
         }
 
@@ -63,6 +68,15 @@ namespace PresentationLayer.GUI.ViewModels
             }
         }
 
+        public ObservableCollection<Visit> PatientAppointments
+        {
+            get
+            {
+                _patientAppointments = new ObservableCollection<Visit>(_patients[PatientsListBoxSelectedIndex].SheduledVisits);
+                return _patientAppointments;
+            }
+        }
+
         #region UtilityProperties
         private int _patientsListSelectedIndex;
         public int PatientsListBoxSelectedIndex
@@ -73,6 +87,7 @@ namespace PresentationLayer.GUI.ViewModels
                 _patientsListSelectedIndex = value;
                 RemovePatientCommand.RaiseCanExecuteChanged();
                 OnPropertyChanged("IsPatientSelected");
+                OnPropertyChanged("PatientAppointments");
             }
         }
 
@@ -90,6 +105,19 @@ namespace PresentationLayer.GUI.ViewModels
         public bool IsPatientSelected
         {
             get => PatientsListBoxSelectedIndex != -1;
+        }
+
+        
+        private int _patientsAppointmentsListBoxSelectedIndex;
+        public int PatientsAppointmentsListBoxSelectedIndex
+        {
+            get => _patientsAppointmentsListBoxSelectedIndex;
+            set
+            {
+                _patientsAppointmentsListBoxSelectedIndex = value;
+                RemoveAppointment.RaiseCanExecuteChanged();
+                OnPropertyChanged("PatientsAppointmentsListBoxSelectedIndex");
+            }
         }
         #endregion
 
@@ -120,7 +148,6 @@ namespace PresentationLayer.GUI.ViewModels
                 Gender = Gender.Male,
                 Adress = new Adress()
             };
-
             
             _patients.Add(patient);
             Save(_patients, _defaultPatientsFilePath);
@@ -136,9 +163,6 @@ namespace PresentationLayer.GUI.ViewModels
 
         public void ExecuteRemovePatient(object param)
         {
-            HospitalRegistryService<ObservableCollection<Patient>> hospitalRegistryService =
-                new HospitalRegistryService<ObservableCollection<Patient>>();
-
             Patient selectedPatient = _patients[PatientsListBoxSelectedIndex];
             _patients.Remove(selectedPatient);
             Save(_patients, _defaultPatientsFilePath);
@@ -206,6 +230,46 @@ namespace PresentationLayer.GUI.ViewModels
                     return p.FirstName.ToLower().Contains(((string)param).ToLower()) ||
                            p.LastName.ToLower().Contains(((string)param).ToLower());
                 }));
+            OnPropertyChanged("PatientsList");
+        }
+        #endregion
+
+        #region AddAppointment
+        public void ExecuteAddAppointment(object param)
+        {
+            Visit visit = new Visit()
+            {
+                Date = new DateTime(2000, 1, 1),
+                Doctor = new Doctor()
+                {
+                    Specialization = "Specialization",
+                    FirstName = "FirstName",
+                    LastName = "LastName"
+                }
+            };
+            _patients[PatientsListBoxSelectedIndex].SheduledVisits.Add(visit);
+            Save(_patients, _defaultPatientsFilePath);
+            OnPropertyChanged("PatientsList");
+            OnPropertyChanged("PatientAppointments");
+        }
+        #endregion
+
+        #region RemoveAppointment
+        public bool CanExecuteRemoveAppointment(object param)
+        {
+            return PatientsAppointmentsListBoxSelectedIndex != -1;
+        }
+
+        public void ExecuteRemoveAppointment(object param)
+        {
+            Visit selectedVisit = _patientAppointments[_patientsAppointmentsListBoxSelectedIndex];
+            _patients[PatientsListBoxSelectedIndex]
+                .SheduledVisits
+                .Remove(selectedVisit);
+            Save(_patients, _defaultPatientsFilePath);
+            RemoveAppointment.RaiseCanExecuteChanged();
+            OnPropertyChanged("PatientsAppointmentsListBoxSelectedIndex");
+            OnPropertyChanged("PatientAppointments");
             OnPropertyChanged("PatientsList");
         }
         #endregion

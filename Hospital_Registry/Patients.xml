@@ -1,27 +1,46 @@
 <?xml version="1.0"?>
 <ArrayOfPatient xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Patient>
-    <FirstName>Bogdan</FirstName>
-    <LastName>Fedorenko</LastName>
-    <DateOfBirth>1988-05-30T00:00:00</DateOfBirth>
-    <Gender>Male</Gender>
+    <FirstName>Empty</FirstName>
+    <LastName>Patient</LastName>
+    <DateOfBirth>2000-01-01T00:00:00</DateOfBirth>
+    <Gender>Female</Gender>
     <Id>0</Id>
-    <SheduledVisits />
+    <SheduledVisits>
+      <Visit>
+        <Id>0</Id>
+        <Date>2000-01-01T00:00:00</Date>
+        <Doctor>
+          <FirstName>FirstName</FirstName>
+          <LastName>LastName</LastName>
+          <DateOfBirth>0001-01-01T00:00:00</DateOfBirth>
+          <Gender>Male</Gender>
+          <Id>0</Id>
+          <Experience>0</Experience>
+          <StartedACareer>0001-01-01T00:00:00</StartedACareer>
+          <Specialization>Specialization</Specialization>
+        </Doctor>
+      </Visit>
+    </SheduledVisits>
     <VisitsHistory />
-    <Adress>
-      <City>Kyiv</City>
-      <Street>Volunska</Street>
-      <Building>15</Building>
-    </Adress>
-    <MobileNumber>+380636429376</MobileNumber>
-    <HomeNumber>270-04-56</HomeNumber>
-    <Email>bogdan.fedorenko@gmail.com</Email>
+    <Adress />
+    <MobileNumber />
   </Patient>
   <Patient>
     <FirstName>Empty</FirstName>
     <LastName>Patient</LastName>
     <DateOfBirth>2000-01-01T00:00:00</DateOfBirth>
-    <Gender>Female</Gender>
+    <Gender>Male</Gender>
+    <Id>0</Id>
+    <SheduledVisits />
+    <VisitsHistory />
+    <Adress />
+  </Patient>
+  <Patient>
+    <FirstName>Empty</FirstName>
+    <LastName>Patient</LastName>
+    <DateOfBirth>2000-01-01T00:00:00</DateOfBirth>
+    <Gender>Male</Gender>
     <Id>0</Id>
     <SheduledVisits />
     <VisitsHistory />

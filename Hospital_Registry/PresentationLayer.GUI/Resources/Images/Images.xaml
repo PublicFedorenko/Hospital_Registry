@@ -27,6 +27,7 @@
     <BitmapImage x:Key="EditIcon" UriSource="Edit.png" />
     <BitmapImage x:Key="HandsetIcon" UriSource="Handset.png" />
     <BitmapImage x:Key="CalendarIcon" UriSource="Calendar.png" />
+    <BitmapImage x:Key="Calendar1Icon" UriSource="Calendar1.png" />
     <BitmapImage x:Key="AddUserIcon" UriSource="AddUser.png" />
     <BitmapImage x:Key="RemoveUserIcon" UriSource="RemoveUser.png" />
     <BitmapImage x:Key="DoctorIcon" UriSource="Doctor.png" />

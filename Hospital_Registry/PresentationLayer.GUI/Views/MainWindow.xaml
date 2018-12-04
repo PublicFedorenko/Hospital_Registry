@@ -99,6 +99,7 @@
                                             <StackPanel Orientation="Vertical">
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock Foreground="{StaticResource SecondaryTextBrush}" Text="{Binding FirstName}" />
+                                                    <TextBlock Foreground="{StaticResource SecondaryTextBrush}" Text=" " />
                                                     <TextBlock Foreground="{StaticResource SecondaryTextBrush}" Text="{Binding LastName}" />
                                                 </StackPanel>
                                                 <StackPanel Orientation="Horizontal">
@@ -497,13 +498,60 @@
                                             </Style>
                                         </ScrollViewer.Style>
 
-                                        <ListBox />
+                                        <ListBox
+                                            x:Name="ListBox_PatientAppointments"
+                                            ItemsSource="{Binding PatientAppointments}"
+                                            SelectedIndex="{Binding PatientsAppointmentsListBoxSelectedIndex, UpdateSourceTrigger=PropertyChanged}">
+                                            <ListBox.ItemTemplate>
+                                                <DataTemplate>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Image
+                                                            Width="{Binding Path=Height, RelativeSource={RelativeSource Self}}"
+                                                            Height="25"
+                                                            Source="{StaticResource Calendar1Icon}"
+                                                            Style="{StaticResource LittleIconStyle}" />
+                                                        <StackPanel Orientation="Vertical">
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <TextBlock Foreground="{StaticResource SecondaryTextBrush}" Text="{Binding Doctor.Specialization}" />
+                                                                <TextBlock Foreground="{StaticResource SecondaryTextBrush}" Text=" — " />
+                                                                <TextBlock Foreground="{StaticResource SecondaryTextBrush}" Text="{Binding Doctor.FirstName}" />
+                                                                <TextBlock Foreground="{StaticResource SecondaryTextBrush}" Text=" " />
+                                                                <TextBlock Foreground="{StaticResource SecondaryTextBrush}" Text="{Binding Doctor.LastName}" />
+                                                            </StackPanel>
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <TextBlock Foreground="{StaticResource SecondaryTextBrush}" Text="{Binding Date}" />
+                                                            </StackPanel>
+                                                        </StackPanel>
+                                                    </StackPanel>
+                                                </DataTemplate>
+                                            </ListBox.ItemTemplate>
+                                        </ListBox>
                                     </ScrollViewer>
                                     <StackPanel Grid.Row="4" Orientation="Horizontal">
                                         <Button
+                                            Command="{Binding AddAppointment}"
                                             Content="+ Add appointment"
                                             FontFamily="{StaticResource MainFontFamily}"
                                             Foreground="{StaticResource ServiceButtonsTextBrush}">
+                                            <Button.Style>
+                                                <Style BasedOn="{StaticResource BorderlessServiceButtonStyle}" TargetType="{x:Type Button}">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding IsPatientSelected}" Value="True">
+                                                            <Setter Property="Visibility" Value="Visible" />
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding IsPatientSelected}" Value="False">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Button.Style>
+                                        </Button>
+                                        <Label Width="10" />
+                                        <Button
+                                            Command="{Binding RemoveAppointment}"
+                                            Content="- Remove appointment"
+                                            FontFamily="{StaticResource MainFontFamily}"
+                                            Foreground="#FFE02222">
                                             <Button.Style>
                                                 <Style BasedOn="{StaticResource BorderlessServiceButtonStyle}" TargetType="{x:Type Button}">
                                                     <Style.Triggers>
