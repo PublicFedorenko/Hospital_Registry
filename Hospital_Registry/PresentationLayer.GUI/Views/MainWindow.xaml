@@ -453,6 +453,7 @@
                                                 Text="{Binding ElementName=ListBox_Patients, Path=SelectedItem.Adress.Building}" />
                                         </StackPanel>
                                     </StackPanel>
+
                                 </Grid>
                                 <Grid Grid.Row="2">
                                     <Grid.RowDefinitions>
@@ -573,8 +574,497 @@
                     </ScrollViewer>
                 </Grid>
             </TabItem>
+
             <TabItem Header="Doctors" Style="{StaticResource TabItemStyle}">
-                <Grid Background="White" />
+                <Grid Background="White">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="197*" />
+                        <ColumnDefinition Width="5*" />
+                        <ColumnDefinition Width="311*" />
+                    </Grid.ColumnDefinitions>
+                    <Separator
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="3"
+                        Margin="0,2.4,0.4,2.2" />
+                    <Grid
+                        Grid.Row="1"
+                        Grid.RowSpan="2"
+                        Grid.Column="0"
+                        Margin="0,9.4,4.4,-0.4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="69*" />
+                            <ColumnDefinition Width="38.4" />
+                            <ColumnDefinition Width="38.4" />
+                            <ColumnDefinition Width="2*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="34" />
+                            <RowDefinition Height="10" />
+                            <RowDefinition Height="34" />
+                            <RowDefinition Height="10*" />
+                            <RowDefinition Height="25.6" />
+                            <RowDefinition Height="10" />
+                            <RowDefinition Height="453*" />
+                            <RowDefinition Height="10" />
+                        </Grid.RowDefinitions>
+
+
+                        <TextBox
+                            x:Name="TextBox_DoctorsSearchBar"
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            VerticalContentAlignment="Center"
+                            FontSize="14"
+                            TextWrapping="Wrap" />
+                        <ScrollViewer
+                            Grid.Row="6"
+                            Grid.Column="1"
+                            Grid.ColumnSpan="3">
+                            <ListBox
+                                x:Name="ListBox_Doctors"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch"
+                                ItemsSource="{Binding DoctorsList}"
+                                SelectedIndex="{Binding DoctorsListBoxSelectedIndex, UpdateSourceTrigger=PropertyChanged}">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image
+                                                Width="{Binding Path=Height, RelativeSource={RelativeSource Self}}"
+                                                Height="25"
+                                                Source="{StaticResource PatientIcon}"
+                                                Style="{StaticResource LittleIconStyle}" />
+                                            <StackPanel Orientation="Vertical">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock Foreground="{StaticResource SecondaryTextBrush}" Text="{Binding FirstName}" />
+                                                    <TextBlock Foreground="{StaticResource SecondaryTextBrush}" Text=" " />
+                                                    <TextBlock Foreground="{StaticResource SecondaryTextBrush}" Text="{Binding LastName}" />
+                                                </StackPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock Foreground="{StaticResource SecondaryTextBrush}" Text="{Binding Age}" />
+                                                    <TextBlock Foreground="{StaticResource SecondaryTextBrush}" Text=" years, " />
+                                                    <TextBlock Foreground="{StaticResource SecondaryTextBrush}" Text="{Binding DateOfBirth, StringFormat={}M.d.yyyy}" />
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </ScrollViewer>
+                        <TextBox
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            FontFamily="{StaticResource MainFontFamily}"
+                            FontSize="20"
+                            Style="{StaticResource CopybleReadOnlyTextBoxStyle}"
+                            Text="All doctors" />
+                        <Button
+                            Grid.Column="2"
+                            Width="{Binding Path=Height, RelativeSource={RelativeSource Self}}"
+                            Height="25"
+                            Background="{StaticResource AddUserImageBrush}"
+                            Command="{Binding AddDoctorCommand}"
+                            Style="{StaticResource BorderlessServiceButtonStyle}" />
+                        <Button
+                            Grid.Column="3"
+                            Width="{Binding Path=Height, RelativeSource={RelativeSource Self}}"
+                            Height="25"
+                            Background="{StaticResource RemoveUserImageBrush}"
+                            Command="{Binding RemoveDoctorCommand}"
+                            CommandParameter="{Binding ElementName=ListBox_Patients, Path=SelectedIndex}"
+                            Style="{StaticResource BorderlessServiceButtonStyle}" />
+                        <Button
+                            Grid.Row="2"
+                            Grid.Column="2"
+                            Grid.ColumnSpan="2"
+                            Background="White"
+                            Command="{Binding FindDoctors}"
+                            CommandParameter="{Binding ElementName=TextBox_DoctorsSearchBar, Path=Text}"
+                            Content="Search"
+                            FontSize="14" />
+                        <TextBox
+                            Grid.Row="4"
+                            Grid.Column="1"
+                            Grid.ColumnSpan="3"
+                            VerticalContentAlignment="Center"
+                            Foreground="#FF797979"
+                            Style="{StaticResource CopybleReadOnlyTextBoxStyle}"
+                            Text="Enter request and press Search or Enter key." />
+                        <Separator
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Grid.ColumnSpan="3" />
+                        <Separator
+                            Grid.Row="5"
+                            Grid.Column="1"
+                            Grid.ColumnSpan="3" />
+                    </Grid>
+
+
+                    <ScrollViewer
+                        Grid.Row="1"
+                        Grid.RowSpan="2"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                        Margin="3.6,9.4,0.4,-0.4"
+                        VerticalScrollBarVisibility="Auto">
+                        <Grid
+                            Grid.Row="3"
+                            Grid.Column="2"
+                            Margin="0,0,0,0">
+                            <!--  REMOVE MARGIN  -->
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="34" />
+                                <RowDefinition Height="10" />
+                                <RowDefinition Height="34" />
+                                <RowDefinition Height="10" />
+                                <RowDefinition Height="500.8" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="10" />
+                                <ColumnDefinition Width="425*" />
+                                <ColumnDefinition Width="157*" />
+                                <ColumnDefinition Width="20" />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBox
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                VerticalContentAlignment="Center"
+                                FontFamily="{StaticResource MainFontFamily}"
+                                FontSize="20"
+                                Style="{StaticResource CopybleReadOnlyTextBoxStyle}"
+                                Text="Doctor info" />
+                            <StackPanel
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                Orientation="Horizontal">
+                                <StackPanel.Style>
+                                    <Style TargetType="{x:Type StackPanel}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding IsDoctorSelected}" Value="True">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding IsDoctorSelected}" Value="False">
+                                                <Setter Property="Visibility" Value="Collapsed" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </StackPanel.Style>
+                                <ComboBox SelectedIndex="{Binding ElementName=ListBox_Doctors, Path=SelectedItem.Gender}">
+                                    <ComboBoxItem>
+                                        <Image Width="16" Source="{StaticResource MonoMaleIcon}" />
+                                    </ComboBoxItem>
+                                    <ComboBoxItem>
+                                        <Image Width="18" Source="{StaticResource Female1Icon}" />
+                                    </ComboBoxItem>
+                                    <ComboBox.Style>
+                                        <Style TargetType="{x:Type ComboBox}">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding IsDoctorReadOnly}" Value="True">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding IsDoctorReadOnly}" Value="False">
+                                                    <Setter Property="Visibility" Value="Visible" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </ComboBox.Style>
+                                </ComboBox>
+                                <Image Width="16" RenderOptions.BitmapScalingMode="Fant">
+                                    <Image.Style>
+                                        <Style TargetType="{x:Type Image}">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=ListBox_Doctors, Path=SelectedItem.Gender}" Value="Male">
+                                                    <Setter Property="Source" Value="{StaticResource MonoMaleIcon}" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding ElementName=ListBox_Doctors, Path=SelectedItem.Gender}" Value="Female">
+                                                    <Setter Property="Source" Value="{StaticResource Female1Icon}" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding IsPatientReadOnly}" Value="False">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding IsPatientReadOnly}" Value="True">
+                                                    <Setter Property="Visibility" Value="Visible" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Image.Style>
+                                </Image>
+                                <Label Width="4" />
+                                <TextBox
+                                    x:Name="TextBox_DoctorsFirstName"
+                                    VerticalContentAlignment="Center"
+                                    FontFamily="{StaticResource MainFontFamily}"
+                                    FontSize="17"
+                                    Style="{StaticResource PatientPropertiesStyle}"
+                                    Text="{Binding ElementName=ListBox_Doctors, Mode=TwoWay, Path=SelectedItem.FirstName}" />
+                                <TextBox
+                                    x:Name="TextBox_DoctorsLastName"
+                                    VerticalContentAlignment="Center"
+                                    FontFamily="{StaticResource MainFontFamily}"
+                                    FontSize="17"
+                                    Style="{StaticResource PatientPropertiesStyle}"
+                                    Text="{Binding ElementName=ListBox_Doctors, Path=SelectedItem.LastName}" />
+                                <Label Width="10" />
+                                <Button
+                                    Width="{Binding Path=Height, RelativeSource={RelativeSource Self}}"
+                                    Height="16"
+                                    Command="{Binding EditDoctorCommand}"
+                                    Style="{StaticResource EditButtonStyle}" />
+
+                            </StackPanel>
+                            <Grid Grid.Row="2" Grid.Column="2">
+                                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                                    <Button
+                                        Width="{Binding Path=Height, RelativeSource={RelativeSource Self}}"
+                                        Height="16"
+                                        Background="{StaticResource RefreshImageBrush}"
+                                        Command="{Binding RefreshDoctor}">
+                                        <Button.Style>
+                                            <Style BasedOn="{StaticResource BorderlessServiceButtonStyle}" TargetType="{x:Type Button}">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding IsDoctorSelected}" Value="True">
+                                                        <Setter Property="Visibility" Value="Visible" />
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding IsDoctorSelected}" Value="False">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+                                    </Button>
+
+                                </StackPanel>
+                            </Grid>
+                            <Separator
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Grid.ColumnSpan="3"
+                                Margin="0.4,1.6,3.2,2" />
+                            <Grid
+                                Grid.Row="4"
+                                Grid.Column="1"
+                                Grid.ColumnSpan="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="135.2" />
+                                    <RowDefinition Height="10" />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+
+                                <Grid Grid.Row="0" Grid.Column="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="130" />
+                                        <ColumnDefinition Width="10" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="10" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Border BorderBrush="Gray" BorderThickness="0">
+                                        <Image RenderOptions.BitmapScalingMode="Fant" Source="{StaticResource PatientPhoto2Icon}">
+                                            <Image.Style>
+                                                <Style TargetType="{x:Type Image}">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding IsDoctorSelected}" Value="True">
+                                                            <Setter Property="Visibility" Value="Visible" />
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding IsDoctorSelected}" Value="False">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Image.Style>
+                                        </Image>
+                                    </Border>
+
+                                    <StackPanel Grid.Row="0" Grid.Column="2">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image
+                                                Height="{Binding ElementName=TextBox_DoctorsId, Path=Height}"
+                                                Source="{StaticResource IdCard1Icon}"
+                                                Style="{StaticResource DoctorsLittleIconStyle}" />
+                                            <TextBox
+                                                x:Name="TextBox_DoctorsId"
+                                                Height="20"
+                                                VerticalContentAlignment="Bottom"
+                                                Background="Transparent"
+                                                BorderBrush="{x:Null}"
+                                                BorderThickness="0"
+                                                Foreground="{StaticResource SecondaryTextBrush}"
+                                                Text="{Binding ElementName=ListBox_Doctors, Path=SelectedItem.Id}" />
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image
+                                                Height="{Binding ElementName=TextBox_DoctorAge, Path=Height}"
+                                                Source="{StaticResource BirthdayCake2Icon}"
+                                                Style="{StaticResource DoctorsLittleIconStyle}" />
+                                            <TextBox
+                                                x:Name="TextBox_DoctorAge"
+                                                Height="20"
+                                                VerticalContentAlignment="Bottom"
+                                                Background="Transparent"
+                                                BorderBrush="{x:Null}"
+                                                BorderThickness="0"
+                                                Foreground="{StaticResource SecondaryTextBrush}"
+                                                Text="{Binding ElementName=ListBox_Doctors, Mode=OneWay, Path=SelectedItem.Age, UpdateSourceTrigger=PropertyChanged}" />
+                                            <TextBox
+                                                Height="20"
+                                                VerticalContentAlignment="Bottom"
+                                                Foreground="{StaticResource SecondaryTextBrush}"
+                                                Style="{StaticResource PatientPropertiesStyle}"
+                                                Text="{Binding ElementName=ListBox_Doctors, Path=SelectedItem.DateOfBirth, StringFormat={}M.d.yyyy}" />
+                                        </StackPanel>
+
+
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image
+                                                Height="{Binding ElementName=TextBox_DoctorHomeNumber, Path=Height}"
+                                                Source="{StaticResource HandsetIcon}"
+                                                Style="{StaticResource DoctorsLittleIconStyle}" />
+                                            <TextBox
+                                                x:Name="TextBox_DoctorHomeNumber"
+                                                Height="20"
+                                                VerticalContentAlignment="Bottom"
+                                                Foreground="{StaticResource SecondaryTextBrush}"
+                                                Style="{StaticResource PatientPropertiesStyle}"
+                                                Text="{Binding ElementName=ListBox_Doctors, Path=SelectedItem.HomeNumber}" />
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image
+                                                Height="{Binding ElementName=TextBox_DoctorMobileNumber, Path=Height}"
+                                                Source="{StaticResource Smartphone1Icon}"
+                                                Style="{StaticResource DoctorsLittleIconStyle}" />
+                                            <TextBox
+                                                x:Name="TextBox_DoctorMobileNumber"
+                                                Height="20"
+                                                VerticalContentAlignment="Bottom"
+                                                Foreground="{StaticResource SecondaryTextBrush}"
+                                                Style="{StaticResource PatientPropertiesStyle}"
+                                                Text="{Binding ElementName=ListBox_Doctors, Path=SelectedItem.MobileNumber}" />
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image
+                                                Height="{Binding ElementName=TextBox_DoctorsEmail, Path=Height}"
+                                                Source="{StaticResource ArrobaIcon}"
+                                                Style="{StaticResource DoctorsLittleIconStyle}" />
+                                            <TextBox
+                                                x:Name="TextBox_DoctorsEmail"
+                                                Height="20"
+                                                VerticalContentAlignment="Bottom"
+                                                Foreground="{StaticResource SecondaryTextBrush}"
+                                                Style="{StaticResource PatientPropertiesStyle}"
+                                                Text="{Binding ElementName=ListBox_Doctors, Path=SelectedItem.Email}" />
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image
+                                                Height="{Binding ElementName=TextBox_DoctorsAdress, Path=Height}"
+                                                Source="{StaticResource PlaceholderIcon}"
+                                                Style="{StaticResource DoctorsLittleIconStyle}" />
+                                            <TextBox
+                                                x:Name="TextBox_DoctorsAdress"
+                                                Height="20"
+                                                VerticalContentAlignment="Bottom"
+                                                Foreground="{StaticResource SecondaryTextBrush}"
+                                                Style="{StaticResource PatientPropertiesStyle}"
+                                                Text="{Binding ElementName=ListBox_Doctors, Path=SelectedItem.Adress.City}" />
+                                            <Image
+                                                Width="28"
+                                                Height="{Binding ElementName=TextBox_DoctorsAdress, Path=Height}"
+                                                Source="{StaticResource Road1Icon}"
+                                                Style="{StaticResource DoctorsLittleIconStyle}" />
+                                            <TextBox
+                                                Height="20"
+                                                VerticalContentAlignment="Bottom"
+                                                Foreground="{StaticResource SecondaryTextBrush}"
+                                                Style="{StaticResource PatientPropertiesStyle}"
+                                                Text="{Binding ElementName=ListBox_Doctors, Path=SelectedItem.Adress.Street}" />
+                                            <Image
+                                                Width="28"
+                                                Height="{Binding ElementName=TextBox_DoctorsAdress, Path=Height}"
+                                                Source="{StaticResource ApartmentIcon}"
+                                                Style="{StaticResource DoctorsLittleIconStyle}" />
+                                            <TextBox
+                                                Height="20"
+                                                VerticalContentAlignment="Bottom"
+                                                Foreground="{StaticResource SecondaryTextBrush}"
+                                                Style="{StaticResource PatientPropertiesStyle}"
+                                                Text="{Binding ElementName=ListBox_Doctors, Path=SelectedItem.Adress.Building}" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <StackPanel Grid.Row="0" Grid.Column="4">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image
+                                                Height="{Binding ElementName=TextBox_DoctorEducation, Path=Height}"
+                                                Source="{StaticResource Graduation-hatIcon}"
+                                                Style="{StaticResource DoctorsLittleIconStyle}" />
+                                            <TextBox
+                                                x:Name="TextBox_DoctorEducation"
+                                                Height="20"
+                                                VerticalContentAlignment="Bottom"
+                                                Background="Transparent"
+                                                BorderBrush="{x:Null}"
+                                                BorderThickness="0"
+                                                Foreground="{StaticResource SecondaryTextBrush}"
+                                                Text="{Binding ElementName=ListBox_Patients, Path=SelectedItem.Education}" />
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image
+                                                Height="{Binding ElementName=TextBox_DoctorSpecialization, Path=Height}"
+                                                Source="{StaticResource medalIcon}"
+                                                Style="{StaticResource DoctorsLittleIconStyle}" />
+                                            <TextBox
+                                                x:Name="TextBox_DoctorSpecialization"
+                                                Height="20"
+                                                VerticalContentAlignment="Bottom"
+                                                Background="Transparent"
+                                                BorderBrush="{x:Null}"
+                                                BorderThickness="0"
+                                                Foreground="{StaticResource SecondaryTextBrush}"
+                                                Text="{Binding ElementName=ListBox_Patients, Path=SelectedItem.Specialization}" />
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image
+                                                Height="{Binding ElementName=TextBox_DoctorStartedACareer, Path=Height}"
+                                                Source="{StaticResource StartIcon}"
+                                                Style="{StaticResource DoctorsLittleIconStyle}" />
+                                            <Image
+                                                Height="{Binding ElementName=TextBox_DoctorStartedACareer, Path=Height}"
+                                                Source="{StaticResource GoalIcon}"
+                                                Style="{StaticResource DoctorsLittleIconStyle}" />
+                                            <TextBox
+                                                x:Name="TextBox_DoctorStartedACareer"
+                                                Height="20"
+                                                VerticalContentAlignment="Bottom"
+                                                Background="Transparent"
+                                                BorderBrush="{x:Null}"
+                                                BorderThickness="0"
+                                                Foreground="{StaticResource SecondaryTextBrush}"
+                                                Text="{Binding ElementName=ListBox_Patients, Path=SelectedItem.StartedACareer}" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Grid>
+                                <Grid Grid.Row="2">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="34" />
+                                        <RowDefinition Height="10" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="5" />
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="270*" />
+                                    </Grid.RowDefinitions>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </ScrollViewer>
+                </Grid>
             </TabItem>
             <TabItem Header="Shedule" Style="{StaticResource TabItemStyle}">
                 <Grid Background="White" />

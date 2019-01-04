@@ -6,15 +6,10 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{A10C7DA8-26D5-4395-9FAF-7D77CF2E8060}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PresentationLayer", "PresentationLayer", "{BFFE2564-8CDD-42D2-9925-D3E110EFA692}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\..\Users\Bogdan\Desktop\Images for Coursework\user (5).png = ..\..\..\Users\Bogdan\Desktop\Images for Coursework\user (5).png
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessLogicLayer", "BusinessLogicLayer", "{87A6C012-63FA-4C4E-B0CC-C10C3784C982}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccessLayer", "DataAccessLayer", "{14A193C5-32A2-4897-A939-76ABD55BD861}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{84EF9824-336D-4D43-AF92-B4FCB96C060C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogicLayer.Entities", "BusinessLogicLayer.Entities\BusinessLogicLayer.Entities.csproj", "{FF06E1EA-D02D-41A7-942A-DCB5D64D6BB2}"
 EndProject
@@ -28,6 +23,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer.Serializati
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Storage", "Storage", "{9C808A23-F831-4F61-9A26-AB929FC07C84}"
 	ProjectSection(SolutionItems) = preProject
+		Doctors.xml = Doctors.xml
 		Patients.xml = Patients.xml
 	EndProjectSection
 EndProject

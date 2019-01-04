@@ -36,4 +36,8 @@
     <BitmapImage x:Key="RoadIcon" UriSource="Road.png" />
     <BitmapImage x:Key="Road1Icon" UriSource="Road1.png" />
     <BitmapImage x:Key="CheckSymbolIcon" UriSource="CheckSymbol.png" />
+    <BitmapImage x:Key="Graduation-hatIcon" UriSource="Graduation-hat.png" />
+    <BitmapImage x:Key="medalIcon" UriSource="medal (1).png" />
+    <BitmapImage x:Key="StartIcon" UriSource="start.png" />
+    <BitmapImage x:Key="GoalIcon" UriSource="goal.png" />
 </ResourceDictionary>

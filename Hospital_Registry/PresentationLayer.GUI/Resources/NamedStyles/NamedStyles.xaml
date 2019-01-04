@@ -9,5 +9,6 @@
         <ResourceDictionary Source="TabItemStyle.xaml" />
         <ResourceDictionary Source="PatientPropertiesStyle.xaml" />
         <ResourceDictionary Source="EditButtonStyle.xaml" />
+        <ResourceDictionary Source="DoctorsLittleIconStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
