@@ -12,8 +12,26 @@ namespace BusinessLogicLayer.Entities.Entities
     [Serializable]
     public class Person : INotifyPropertyChanged
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        private string _firstName;
+        public string FirstName
+        {
+            get => _firstName;
+            set
+            {
+                _firstName = value;
+                OnPropertyChanged("FirstName");
+            }
+        }
+        private string _lastName;
+        public string LastName
+        {
+            get => _lastName;
+            set
+            {
+                _lastName = value;
+                OnPropertyChanged("LastName");
+            }
+        }
         private DateTime _dateOfBirth;
         public DateTime DateOfBirth
         {
@@ -25,8 +43,26 @@ namespace BusinessLogicLayer.Entities.Entities
                 OnPropertyChanged("DateOfBirth");
             }
         }
-        public int Age { get => DateTime.Today.Year - DateOfBirth.Year; }
-        public Gender Gender { get; set; }
+        public int Age
+        {
+            get
+            {
+                int age = DateTime.Today.Year - DateOfBirth.Year;
+                if (DateOfBirth > DateTime.Today.AddYears(-age))
+                    age--;
+                return age;
+            }
+        }
+        private Gender _gender;
+        public Gender Gender
+        {
+            get => _gender;
+            set
+            {
+                _gender = value;
+                OnPropertyChanged("Gender");
+            }
+        }
         public Person() { }
         public Person(string firstName, string lastName, DateTime dateOfBirth, Gender gender)
         {
