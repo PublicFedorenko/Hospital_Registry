@@ -3,8 +3,8 @@
   <Patient>
     <FirstName>Empty</FirstName>
     <LastName>Patient</LastName>
-    <DateOfBirth>2000-01-01T00:00:00</DateOfBirth>
-    <Gender>Female</Gender>
+    <DateOfBirth>1998-01-04T00:00:00</DateOfBirth>
+    <Gender>Male</Gender>
     <Id>0</Id>
     <SheduledVisits>
       <Visit>
@@ -16,9 +16,10 @@
           <DateOfBirth>0001-01-01T00:00:00</DateOfBirth>
           <Gender>Male</Gender>
           <Id>0</Id>
-          <Experience>0</Experience>
+          <Experience>2018</Experience>
           <StartedACareer>0001-01-01T00:00:00</StartedACareer>
           <Specialization>Specialization</Specialization>
+          <VisitsQueue />
         </Doctor>
       </Visit>
     </SheduledVisits>

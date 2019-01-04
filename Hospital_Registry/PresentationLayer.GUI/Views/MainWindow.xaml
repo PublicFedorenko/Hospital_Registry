@@ -105,7 +105,7 @@
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock Foreground="{StaticResource SecondaryTextBrush}" Text="{Binding Age}" />
                                                     <TextBlock Foreground="{StaticResource SecondaryTextBrush}" Text=" years, " />
-                                                    <TextBlock Foreground="{StaticResource SecondaryTextBrush}" Text="{Binding DateOfBirth, StringFormat={}M.d.yyyy}" />
+                                                    <TextBlock Foreground="{StaticResource SecondaryTextBrush}" Text="{Binding DateOfBirth, StringFormat={}dd/MM/yyyy, ConverterCulture=tr-TR}" />
                                                 </StackPanel>
                                             </StackPanel>
                                         </StackPanel>
@@ -374,7 +374,7 @@
                                                 VerticalContentAlignment="Bottom"
                                                 Foreground="{StaticResource SecondaryTextBrush}"
                                                 Style="{StaticResource PatientPropertiesStyle}"
-                                                Text="{Binding ElementName=ListBox_Patients, Path=SelectedItem.DateOfBirth, StringFormat={}M.d.yyyy}" />
+                                                Text="{Binding ElementName=ListBox_Patients, Path=SelectedItem.DateOfBirth, StringFormat={}dd/MM/yyyy, ConverterCulture=tr-TR}" />
                                         </StackPanel>
 
 
@@ -650,7 +650,7 @@
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock Foreground="{StaticResource SecondaryTextBrush}" Text="{Binding Age}" />
                                                     <TextBlock Foreground="{StaticResource SecondaryTextBrush}" Text=" years, " />
-                                                    <TextBlock Foreground="{StaticResource SecondaryTextBrush}" Text="{Binding DateOfBirth, StringFormat={}M.d.yyyy}" />
+                                                    <TextBlock Foreground="{StaticResource SecondaryTextBrush}" Text="{Binding DateOfBirth, StringFormat={}dd/MM/yyyy, ConverterCulture=tr-TR}" />
                                                 </StackPanel>
                                             </StackPanel>
                                         </StackPanel>
@@ -920,7 +920,7 @@
                                                 VerticalContentAlignment="Bottom"
                                                 Foreground="{StaticResource SecondaryTextBrush}"
                                                 Style="{StaticResource PatientPropertiesStyle}"
-                                                Text="{Binding ElementName=ListBox_Doctors, Path=SelectedItem.DateOfBirth, StringFormat={}M.d.yyyy}" />
+                                                Text="{Binding ElementName=ListBox_Doctors, Path=SelectedItem.DateOfBirth, StringFormat={}dd/MM/yyyy, ConverterCulture=tr-TR}" />
                                         </StackPanel>
 
 
