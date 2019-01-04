@@ -19,22 +19,12 @@ namespace BusinessLogicLayer.Services
         {
             get
             {
-                //ObservableCollection<Patient> patients;
                 using (UnitOfWork unitOfWork = new UnitOfWork(new HospitalRegistryContext()))
                 {
                     _patients = new ObservableCollection<Patient>(unitOfWork.Patients.GetAll().ToList());
                 }
                 return _patients;
             }
-            //set
-            //{
-            //    _patients = value;
-            //    using (UnitOfWork unitOfWork = new UnitOfWork(new HospitalRegistryContext()))
-            //    {
-            //        unitOfWork.Patients.AddRange(_patients);
-            //        unitOfWork.Complete();
-            //    }
-            //}
         }
         public ObservableCollection<Doctor> Doctors;
 
