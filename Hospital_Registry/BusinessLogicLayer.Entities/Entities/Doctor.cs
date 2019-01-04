@@ -20,6 +20,7 @@ namespace BusinessLogicLayer.Entities.Entities
 
         #region Properties
         public int Id { get; set; }
+        public Adress Adress { get; set; }
         public int Experience
         {
             get => _experience;
